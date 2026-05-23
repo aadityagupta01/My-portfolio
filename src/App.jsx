@@ -19,6 +19,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   useEffect(() => {
+    // Disable browser scroll restoration behavior
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Scroll to the very top on load/refresh
+    window.scrollTo(0, 0);
+
     // Refresh ScrollTrigger after all content loads
     const timer = setTimeout(() => {
       ScrollTrigger.refresh()

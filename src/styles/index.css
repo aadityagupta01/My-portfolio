@@ -20,6 +20,7 @@
   --border: #2a2a2a;
   --border-light: #333333;
   --ambient-opacity: 0.06;
+  --brand-github: #ffffff;
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
@@ -63,7 +64,8 @@ html[data-theme="light"] {
   --text-muted: #948b83; /* Warm tan */
   --border: #e3dcd5; /* Warm grey-beige border */
   --border-light: #ece7e0; /* Warm light-grey border */
-  --ambient-opacity: 0.12;
+  --ambient-opacity: 0.04;
+  --brand-github: #2d2621; /* Soft espresso/charcoal */
   --shadow-card: 0 10px 30px rgba(45, 38, 33, 0.05), 0 1px 3px rgba(45, 38, 33, 0.03);
   --shadow-glow: 0 0 25px rgba(5, 150, 105, 0.12);
 }

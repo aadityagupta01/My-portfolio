@@ -1,119 +1,92 @@
 /* ═══════════════════════════════════════════════════
-   Footer
+   Footer — Premium Three-Column Layout Redesign
    ═══════════════════════════════════════════════════ */
 
 .footer {
   position: relative;
   background: var(--bg-primary);
-  padding: 0 24px 48px;
+  padding: 0 6vw 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  transition: background 0.3s ease;
 }
 
-/* ── Top divider line ── */
-.footer-divider {
+/* ── Footnotes Bottom Row ── */
+.footer-bottom {
+  display: flex;
+  align-items: center;
   width: 100%;
-  max-width: 900px;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    color-mix(in srgb, var(--text-primary) 8%, transparent) 25%,
-    color-mix(in srgb, var(--accent) 20%, transparent) 50%,
-    color-mix(in srgb, var(--text-primary) 8%, transparent) 75%,
-    transparent 100%
-  );
-  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 48px;
+  border-top: 1.5px dashed var(--border);
+  transition: border-color 0.3s ease;
+  gap: 40px;
 }
 
-/* ── Content block ── */
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+.footer-monogram {
+  color: var(--text-primary);
+  display: inline-flex;
+  transition: color 0.3s ease;
 }
 
-.footer-line {
-  font-family: 'Inter', sans-serif;
-  color: var(--text-muted);
-  text-align: center;
-  margin: 0;
-}
-
-/* ── Credit ── */
-.footer-credit {
-  font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-.footer-name {
+.footer-monogram:hover {
   color: var(--accent);
-  font-weight: 600;
 }
 
-/* ── Year ── */
-.footer-year {
-  font-size: 0.85rem;
-  font-weight: 400;
+.footer-bottom-item {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
 }
 
-/* ── Tech line ── */
-.footer-tech {
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+.footer-bottom-item--logo {
+  flex: 0 0 calc(50% - 40px);
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
 
-.footer-heart {
-  color: #ef4444;
-  display: inline-block;
-  animation: heartbeat 1.4s ease-in-out infinite;
+.footer-bottom-item--name {
+  flex: 0 0 calc(25% - 20px);
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
 }
 
-@keyframes heartbeat {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  14% {
-    transform: scale(1.2);
-  }
-  28% {
-    transform: scale(1);
-  }
-  42% {
-    transform: scale(1.15);
-  }
-  56% {
-    transform: scale(1);
-  }
+.footer-bottom-item--rights {
+  flex: 0 0 calc(25% - 20px);
+  text-align: right;
 }
 
-/* ═══════════════════════════════════════════════════
+/* ============================================================
    Responsive
-   ═══════════════════════════════════════════════════ */
+   ============================================================ */
 
 @media (max-width: 768px) {
   .footer {
-    padding: 0 16px 36px;
+    padding: 0 24px 36px;
   }
 
-  .footer-divider {
-    margin-bottom: 28px;
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding-top: 36px;
   }
 
-  .footer-credit {
-    font-size: 0.85rem;
+  .footer-bottom-item--logo,
+  .footer-bottom-item--name,
+  .footer-bottom-item--rights {
+    flex: 0 0 auto;
+    text-align: center;
   }
 
-  .footer-year {
-    font-size: 0.8rem;
-  }
-
-  .footer-tech {
-    font-size: 0.75rem;
+  .footer-bottom-item--logo {
+    justify-content: center;
   }
 }

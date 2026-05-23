@@ -137,6 +137,38 @@
   justify-content: center;
 }
 
+/* ── Rotating Circular Text ── */
+.hero-circular-text {
+  position: absolute;
+  width: 122%;
+  height: 122%;
+  top: -11%;
+  left: -11%;
+  z-index: 1;
+  pointer-events: none;
+  animation: hero-text-rotate 30s linear infinite;
+  will-change: transform;
+}
+
+.hero-circular-text text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  fill: var(--accent);
+  opacity: 0.85;
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+@keyframes hero-text-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .hero-glow {
   position: absolute;
   width: 320px;
@@ -207,7 +239,7 @@
   color: var(--text-secondary);
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 20px;
+  margin-top: 48px;
   text-align: center;
 }
 
@@ -282,7 +314,7 @@
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 20px;
-  color: color-mix(in srgb, var(--text-primary) 30%, transparent);
+  color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 0;
 }
@@ -298,8 +330,8 @@
   background: linear-gradient(
     180deg,
     var(--text-primary) 0%,
-    color-mix(in srgb, var(--text-primary) 70%, transparent) 60%,
-    color-mix(in srgb, var(--accent) 45%, transparent) 100%
+    color-mix(in srgb, var(--text-primary) 70%, var(--accent)) 60%,
+    var(--accent) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -137,7 +137,6 @@ const Hero = () => {
       // ── SCROLL PARALLAX ON PHOTO ONLY ──
       gsap.to(photoContainerRef.current, {
         y: -60,
-        scale: 0.95,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
@@ -248,6 +247,22 @@ const Hero = () => {
             <div className="hero-photo-wrapper" style={{ perspective: '800px' }}>
               <div className="hero-glow" ref={glowRef} />
               <div className="hero-glow-ring" />
+              
+              {/* Rotating Circular Text */}
+              <svg className="hero-circular-text" viewBox="0 0 340 340">
+                <defs>
+                  <path
+                    id="heroCirclePath"
+                    d="M 170, 170 m -150, 0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"
+                  />
+                </defs>
+                <text>
+                  <textPath href="#heroCirclePath" startOffset="0%" textLength="940" lengthAdjust="spacing">
+                    TECH CONTENT CREATOR ✦ IITIAN ✦ SOFTWARE ENGINEER ✦ 
+                  </textPath>
+                </text>
+              </svg>
+
               <img
                 ref={photoRef}
                 src={personal.photo}

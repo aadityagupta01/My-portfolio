@@ -35,9 +35,9 @@ const SOCIAL_ICONS = {
   ),
 };
 
-/* ── Brand colours per platform ── */
+/* ── Brand colors per platform ── */
 const BRAND_COLORS = {
-  github: '#ffffff',
+  github: 'var(--brand-github)',
   linkedin: '#0a66c2',
   leetcode: '#ffa116',
   instagram: '#E1306C',
@@ -48,15 +48,17 @@ const Contact = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const iconsRef = useRef([]);
-  const formRef = useRef(null);
+  const composerRef = useRef(null);
+  const inputElRef = useRef(null);
 
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState(0); // 0: Message, 1: Email, 2: Name, 3: Success
+  const [formData, setFormData] = useState({ message: '', email: '', name: '' });
+  const [error, setError] = useState('');
 
   /* ── GSAP animations ── */
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading fade-in
+      // Heading reveal
       gsap.fromTo(
         headingRef.current,
         { opacity: 0, y: 50, filter: 'blur(8px)' },
@@ -74,7 +76,7 @@ const Contact = () => {
         }
       );
 
-      // Social icons elastic bounce-in with stagger
+      // Social icons staggered entrance
       gsap.fromTo(
         iconsRef.current,
         { scale: 0, opacity: 0 },
@@ -82,8 +84,8 @@ const Contact = () => {
           scale: 1,
           opacity: 1,
           duration: 0.8,
-          ease: 'elastic.out(1, 0.5)',
-          stagger: 0.12,
+          ease: 'elastic.out(1, 0.6)',
+          stagger: 0.08,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 75%',
@@ -92,18 +94,18 @@ const Contact = () => {
         }
       );
 
-      // Form fade-in
-      if (formRef.current) {
+      // Composer fade-in
+      if (composerRef.current) {
         gsap.fromTo(
-          formRef.current,
-          { opacity: 0, y: 40 },
+          composerRef.current,
+          { opacity: 0, y: 30 },
           {
             opacity: 1,
             y: 0,
             duration: 1,
             ease: 'power2.out',
             scrollTrigger: {
-              trigger: formRef.current,
+              trigger: composerRef.current,
               start: 'top 85%',
               toggleActions: 'play none none none',
             },
@@ -115,17 +117,77 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
-  /* ── Form handlers ── */
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const isFirstMount = useRef(true);
+
+  // Autofocus the input field as steps transition, but NOT on initial load
+  useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+    if (inputElRef.current && step < 3) {
+      inputElRef.current.focus();
+    }
+  }, [step]);
+
+  /* ── Conversational Handlers ── */
+  const validateEmail = (val) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(val).toLowerCase());
   };
 
-  const handleSubmit = (e) => {
+  const animateStepTransition = (nextStepCallback) => {
+    gsap.to(inputElRef.current, {
+      opacity: 0,
+      x: -20,
+      duration: 0.25,
+      ease: 'power2.in',
+      onComplete: () => {
+        nextStepCallback();
+        gsap.fromTo(
+          inputElRef.current,
+          { opacity: 0, x: 20 },
+          { opacity: 1, x: 0, duration: 0.35, ease: 'power2.out' }
+        );
+      },
+    });
+  };
+
+  const handleNext = (e) => {
     e.preventDefault();
-    // In a real app you'd POST to a backend / serverless endpoint
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', message: '' });
+    if (step === 0) {
+      if (!formData.message.trim()) {
+        setError('Please type a message before proceeding.');
+        return;
+      }
+      setError('');
+      animateStepTransition(() => setStep(1));
+    } else if (step === 1) {
+      if (!formData.email.trim() || !validateEmail(formData.email)) {
+        setError('Please enter a valid email address.');
+        return;
+      }
+      setError('');
+      animateStepTransition(() => setStep(2));
+    } else if (step === 2) {
+      if (!formData.name.trim()) {
+        setError('Please enter your name.');
+        return;
+      }
+      setError('');
+      // Submit conversational form
+      setStep(3);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (error) setError('');
+  };
+
+  const restartForm = () => {
+    setFormData({ message: '', email: '', name: '' });
+    setStep(0);
   };
 
   return (
@@ -150,6 +212,7 @@ const Contact = () => {
             className={`contact-social-card contact-social--${s.icon}`}
             ref={(el) => (iconsRef.current[i] = el)}
             style={{ '--brand-color': BRAND_COLORS[s.icon] }}
+            data-cursor="exclusion"
           >
             <span className="contact-social-icon">
               {SOCIAL_ICONS[s.icon]}
@@ -164,50 +227,91 @@ const Contact = () => {
         ))}
       </div>
 
-      {/* ── Contact form ── */}
-      <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
-        <h3 className="contact-form-title">Send a message</h3>
-
-        <div className="contact-form-group">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="contact-input"
-          />
+      {/* ── Conversational Single-line Composer ── */}
+      <div className="contact-composer-container" ref={composerRef}>
+        <div className="contact-composer-label">
+          <span>►</span> DROP A MESSAGE IF YOU VIBE
         </div>
 
-        <div className="contact-form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="contact-input"
-          />
-        </div>
+        {step < 3 ? (
+          <form className="contact-composer-form" onSubmit={handleNext}>
+            <div className="contact-composer-input-row">
+              {step === 0 && (
+                <input
+                  type="text"
+                  name="message"
+                  ref={inputElRef}
+                  placeholder="Type your message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="contact-composer-input"
+                  autoComplete="off"
+                  required
+                />
+              )}
+              {step === 1 && (
+                <input
+                  type="email"
+                  name="email"
+                  ref={inputElRef}
+                  placeholder="Type your email address"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="contact-composer-input"
+                  autoComplete="off"
+                  required
+                />
+              )}
+              {step === 2 && (
+                <input
+                  type="text"
+                  name="name"
+                  ref={inputElRef}
+                  placeholder="Type your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="contact-composer-input"
+                  autoComplete="off"
+                  required
+                />
+              )}
 
-        <div className="contact-form-group">
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            className="contact-input contact-textarea"
-          />
-        </div>
+              <button
+                type="submit"
+                className="contact-composer-btn"
+                aria-label="Next Step"
+                title="Next Step"
+                data-cursor="pointer"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+            
+            {/* The elegant underline */}
+            <div className="contact-composer-underline" />
 
-        <button type="submit" className="contact-submit">
-          {submitted ? '✓  Sent!' : 'Send Message'}
-        </button>
-      </form>
+            {error && <div className="contact-composer-error">{error}</div>}
+          </form>
+        ) : (
+          <div className="contact-composer-success">
+            <div className="success-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h4 className="success-title">Message Sent Successfully!</h4>
+            <p className="success-desc">
+              Thank you, {formData.name}. Shyamal will get back to you at {formData.email} soon.
+            </p>
+            <button className="success-reset-btn" onClick={restartForm} data-cursor="pointer">
+              Send another message
+            </button>
+          </div>
+        )}
+      </div>
     </section>
   );
 };
