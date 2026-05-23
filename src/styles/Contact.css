@@ -1,0 +1,309 @@
+/* ═══════════════════════════════════════════════════
+   Contact Section
+   ═══════════════════════════════════════════════════ */
+
+.contact {
+  position: relative;
+  padding: 120px 24px 100px;
+  background: #0a0a0a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Decorative background glow orbs ── */
+.contact-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.contact-glow--left {
+  top: -80px;
+  left: -120px;
+  background: #10b981;
+}
+
+.contact-glow--right {
+  bottom: -60px;
+  right: -100px;
+  background: #3b82f6;
+}
+
+/* ── Heading ── */
+.contact-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 56px;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.contact-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  border-radius: 4px;
+  background: #10b981;
+  margin: 16px auto 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   Social Icons Row
+   ═══════════════════════════════════════════════════ */
+
+.contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Individual social card ── */
+.contact-social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 20px 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.contact-social-card:hover {
+  transform: scale(1.12) translateY(-4px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: var(--brand-color);
+  box-shadow: 0 0 28px -4px var(--brand-color),
+              0 0 60px -12px var(--brand-color);
+}
+
+/* ── Icon ── */
+.contact-social-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-color);
+  transition: filter 0.3s ease;
+}
+
+.contact-social-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-social-card:hover .contact-social-icon {
+  filter: drop-shadow(0 0 8px var(--brand-color));
+}
+
+/* ── Instagram icon gets a gradient fill ── */
+.contact-social--instagram .contact-social-icon svg {
+  fill: url(#ig-gradient);
+}
+
+/* We inject the gradient def via CSS trick — but since SVG gradients need defs
+   inside the SVG, we handle this with a fallback solid colour and let the 
+   component use currentColor with CSS color set to pink */
+.contact-social--instagram {
+  --brand-color: #E1306C;
+}
+
+/* ── Followers badge ── */
+.contact-social-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #E1306C, #833AB4);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 10px rgba(225, 48, 108, 0.4);
+}
+
+/* ── Label ── */
+.contact-social-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.3s ease;
+}
+
+.contact-social-card:hover .contact-social-label {
+  color: #ffffff;
+}
+
+/* ═══════════════════════════════════════════════════
+   Contact Form
+   ═══════════════════════════════════════════════════ */
+
+.contact-form {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 40px 36px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.contact-form-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+              background 0.25s ease;
+  box-sizing: border-box;
+}
+
+.contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15),
+              0 0 20px -6px rgba(16, 185, 129, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ── Submit button ── */
+.contact-submit {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -8px rgba(16, 185, 129, 0.45);
+  filter: brightness(1.1);
+}
+
+.contact-submit:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 16px 72px;
+  }
+
+  .contact-heading {
+    margin-bottom: 40px;
+  }
+
+  .contact-socials {
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .contact-social-card {
+    padding: 16px 20px;
+    min-width: 80px;
+    border-radius: 16px;
+  }
+
+  .contact-social-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-form {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-socials {
+    gap: 12px;
+  }
+
+  .contact-social-card {
+    padding: 14px 16px;
+    min-width: 68px;
+    border-radius: 14px;
+  }
+
+  .contact-social-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-social-label {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,389 @@
+/* ============================================================
+   CERTIFICATIONS & ACHIEVEMENTS SECTION
+   ============================================================ */
+
+.certach {
+  position: relative;
+  padding: 120px 6vw 100px;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+/* Ambient glow */
+.certach::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.certach::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Header ────────────────────────────────────────────────────── */
+.certach-header {
+  max-width: 800px;
+  margin: 0 auto 72px;
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.certach-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 100px;
+  padding: 6px 20px;
+  margin-bottom: 20px;
+}
+
+.certach-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.certach-accent {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.certach-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: #71717a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Sub-section ───────────────────────────────────────────────── */
+.certach-section {
+  max-width: 960px;
+  margin: 0 auto 64px;
+}
+
+.certach-section:last-child {
+  margin-bottom: 0;
+}
+
+.certach-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #d4d4d8;
+  margin: 0 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.certach-section-icon {
+  width: 24px;
+  height: 24px;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certach-section-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================================================
+   CERTIFICATION CARDS
+   ============================================================ */
+
+.certach-certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.certach-cert-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 28px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.certach-cert-card:hover {
+  border-color: color-mix(in srgb, var(--cert-color) 30%, transparent);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--cert-color) 10%, transparent),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Glow behind badge on hover */
+.certach-cert-glow {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--cert-color) 12%, transparent) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.certach-cert-card:hover .certach-cert-glow {
+  opacity: 1;
+}
+
+/* Shield badge area */
+.certach-cert-badge {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--cert-color) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cert-color) 15%, transparent);
+  z-index: 1;
+}
+
+.certach-cert-badge svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Content */
+.certach-cert-content {
+  flex: 1;
+  min-width: 0;
+  z-index: 1;
+}
+
+.certach-cert-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.certach-cert-issuer {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #71717a;
+  margin: 0;
+}
+
+/* Year pill */
+.certach-cert-year {
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 1px solid;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   ACHIEVEMENT CARDS
+   ============================================================ */
+
+.certach-achs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.certach-ach-card {
+  position: relative;
+  padding: 32px 24px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  text-align: center;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  will-change: transform, opacity, filter;
+}
+
+.certach-ach-card:hover {
+  border-color: rgba(16, 185, 129, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.06),
+    0 12px 40px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px);
+}
+
+/* Icon */
+.certach-ach-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.certach-ach-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Highlight number */
+.certach-ach-highlight {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+/* Title */
+.certach-ach-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+/* Description */
+.certach-ach-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #71717a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .certach-achs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .certach {
+    padding: 80px 5vw 64px;
+  }
+
+  .certach-header {
+    margin-bottom: 48px;
+  }
+
+  .certach-certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certach-achs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certach-cert-card {
+    padding: 22px 20px;
+    gap: 14px;
+  }
+
+  .certach-cert-badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .certach-cert-badge svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .certach-cert-name {
+    font-size: 15px;
+  }
+
+  .certach-ach-card {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certach {
+    padding: 60px 4vw 48px;
+  }
+
+  .certach-title {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  .certach-section {
+    margin-bottom: 48px;
+  }
+
+  .certach-cert-card {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .certach-cert-year {
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+  }
+
+  .certach-ach-highlight {
+    font-size: 24px;
+  }
+}

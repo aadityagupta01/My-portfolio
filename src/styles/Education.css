@@ -1,0 +1,318 @@
+/* ============================================================
+   EDUCATION SECTION
+   ============================================================ */
+
+.education {
+  position: relative;
+  padding: 120px 6vw 100px;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+
+/* ── Subtle grid background ───────────────────────────────────── */
+.education::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Header ────────────────────────────────────────────────────── */
+.education-header {
+  max-width: 800px;
+  margin: 0 auto 72px;
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.education-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 100px;
+  padding: 6px 20px;
+  margin-bottom: 20px;
+}
+
+.education-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.education-accent {
+  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.education-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: #71717a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Timeline container ───────────────────────────────────────── */
+.education-timeline {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: 48px;
+}
+
+/* ── Vertical timeline line ───────────────────────────────────── */
+.education-timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    #10b981 0%,
+    rgba(16, 185, 129, 0.3) 50%,
+    rgba(16, 185, 129, 0.05) 100%
+  );
+  border-radius: 2px;
+  will-change: transform;
+}
+
+/* ── Card wrapper (row in the timeline) ───────────────────────── */
+.education-card-wrapper {
+  position: relative;
+  margin-bottom: 28px;
+  will-change: transform, opacity, filter;
+}
+
+.education-card-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Timeline dot ─────────────────────────────────────────────── */
+.education-dot {
+  position: absolute;
+  left: -42px;
+  top: 28px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  z-index: 2;
+}
+
+.education-dot-inner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* ── Card ──────────────────────────────────────────────────────── */
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.education-card:hover {
+  border-color: rgba(16, 185, 129, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(16, 185, 129, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateX(6px);
+}
+
+/* ── Card icon ─────────────────────────────────────────────────── */
+.education-card-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.education-card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Card body ─────────────────────────────────────────────────── */
+.education-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.education-degree {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+  letter-spacing: -0.01em;
+}
+
+.education-institution {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #10b981;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* ── Card meta (year + score) ──────────────────────────────────── */
+.education-card-meta {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.education-year {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #a1a1aa;
+  white-space: nowrap;
+}
+
+.education-score {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  padding: 3px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .education {
+    padding: 80px 5vw 64px;
+  }
+
+  .education-header {
+    margin-bottom: 48px;
+  }
+
+  .education-timeline {
+    padding-left: 40px;
+  }
+
+  .education-timeline-line {
+    left: 11px;
+  }
+
+  .education-dot {
+    left: -36px;
+    width: 18px;
+    height: 18px;
+    top: 24px;
+  }
+
+  .education-dot-inner {
+    width: 6px;
+    height: 6px;
+  }
+
+  .education-card {
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    gap: 14px;
+  }
+
+  .education-card-meta {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .education-degree {
+    font-size: 16px;
+  }
+
+  .education-institution {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education {
+    padding: 60px 4vw 48px;
+  }
+
+  .education-timeline {
+    padding-left: 32px;
+  }
+
+  .education-timeline-line {
+    left: 7px;
+  }
+
+  .education-dot {
+    left: -30px;
+    width: 16px;
+    height: 16px;
+    top: 20px;
+  }
+
+  .education-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  .education-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .education-card {
+    padding: 16px;
+  }
+
+  .education-title {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+}

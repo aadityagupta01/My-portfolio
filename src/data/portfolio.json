@@ -1,0 +1,202 @@
+{
+  "personal": {
+    "name": "Shyamal",
+    "lastName": "Joshi",
+    "title": "Software Engineer & Cloud Architect",
+    "subtitle": "M.Tech CSE @ IIT Jodhpur",
+    "tagline": "Building scalable cloud infrastructure, intelligent ML solutions, and full-stack applications that drive real-world impact...",
+    "bio": "Hi, I'm Shyamal, a software engineer and cloud architect passionate about building scalable systems, automating infrastructure, and solving complex problems with machine learning. Currently pursuing M.Tech at IIT Jodhpur.",
+    "description": "From orchestrating 40+ microservices on Kubernetes to crafting ML models that predict with precision — I blend DevOps, cloud architecture, and AI to build solutions that matter. My work spans AWS, Azure, Docker, React, and beyond.",
+    "email": "joshishyamal101@gmail.com",
+    "phone": "+91-8780502810",
+    "photo": "/images/shyamal-photo.jpg",
+    "resumeLink": "/Shyamal_Joshi_Resume.pdf"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "http://github.com/shyamaljoshi1/",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/shyamaljoshi/",
+      "icon": "linkedin"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/u/shyamaljoshi1/",
+      "icon": "leetcode"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/thefutureguyy.ai/",
+      "icon": "instagram",
+      "followers": "10.8K"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:joshishyamal101@gmail.com",
+      "icon": "email"
+    }
+  ],
+  "techStack": [
+    "React", "Node.js", "Express.js", "JavaScript", "Python", "C++",
+    "Docker", "Kubernetes", "AWS", "Azure", "Jenkins", "Git",
+    "Prometheus", "Grafana", "TensorFlow", "MySQL", "Linux", "HTML/CSS"
+  ],
+  "whatIDo": [
+    {
+      "title": "Cloud & DevOps",
+      "description": "AWS, Azure, Kubernetes, Docker — Architecting scalable cloud infrastructure for high availability.",
+      "icon": "cloud",
+      "color": "#10b981"
+    },
+    {
+      "title": "CI/CD Pipelines",
+      "description": "Jenkins, automated deployments, rollbacks — Streamlining code release with advanced pipelines.",
+      "icon": "pipeline",
+      "color": "#3b82f6"
+    },
+    {
+      "title": "Machine Learning",
+      "description": "Bayesian Networks, Deep Learning, NLP — Building intelligent models for real-world predictions.",
+      "icon": "brain",
+      "color": "#8b5cf6"
+    },
+    {
+      "title": "Full-Stack Web Dev",
+      "description": "React, Node.js, Express — Crafting responsive, performant web applications end-to-end.",
+      "icon": "code",
+      "color": "#f59e0b"
+    },
+    {
+      "title": "Monitoring & Observability",
+      "description": "Prometheus, Grafana, Azure Monitor — Reducing incident detection time by 60%.",
+      "icon": "monitor",
+      "color": "#ef4444"
+    },
+    {
+      "title": "Containerization",
+      "description": "Docker, Kubernetes, EKS — Orchestrating 40+ microservices with automated deployments.",
+      "icon": "container",
+      "color": "#06b6d4"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer (DevOps)",
+      "company": "Zeus Learning",
+      "period": "June 2024 — July 2025",
+      "highlights": [
+        "Spearheaded cloud infrastructure setup and deployment across Azure and AWS for high availability and scalability",
+        "Designed and maintained advanced CI/CD pipelines in Jenkins for code release, configuration generation, and database operations",
+        "Architected scalable Kubernetes (EKS) platform on AWS, orchestrating 40+ microservices with automated deployments and rollbacks",
+        "Delivered containerized applications using multistage Docker builds, cutting image size by 40%",
+        "Built monitoring and alerting stacks with Azure Monitor, Application Insights, and Log Analytics, reducing incident detection time by 60%",
+        "Integrated Azure Key Vault with CI/CD pipelines for secure secret management",
+        "Collaborated with cross-functional teams to drive DevOps adoption, improving rollout frequency and reducing downtime"
+      ]
+    },
+    {
+      "role": "Full-Stack Web Development Intern",
+      "company": "Yottol",
+      "period": "May 2023 — August 2023",
+      "highlights": [
+        "Built logic algorithms and managed extensive data using Node.js and React.js, influencing the company's product",
+        "Automated tasks with Node.js algorithms, significantly boosting efficiency by 25%",
+        "Constructed and deployed REST APIs with Node.js, Express.js, and MySQL",
+        "Integrated MERN components (MySQL, Express.js, React, Node.js) to augment product functionality"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Decision Making in Diabetics Using Bayesian Network",
+      "type": "Course Project — IIT Jodhpur",
+      "description": "Developed a diabetes prediction model using Bayesian Networks (pgmpy) with Hill Climbing + BIC scoring, integrating medical constraints for causal validity. Compared with Logistic Regression, SVM, and Random Forest; deployed via Streamlit.",
+      "tech": ["Python", "pgmpy", "scikit-learn", "Streamlit", "Pandas", "NumPy"],
+      "github": "http://github.com/shyamaljoshi1/",
+      "color": "#8b5cf6"
+    },
+    {
+      "title": "Smart Product Pricing",
+      "type": "Amazon ML Challenge 2025",
+      "description": "Built an ensemble model by training parallel MLPs on CoCa and SigLIP multimodal embeddings, achieving sMAPE of 40.06%. Developed fast and efficient solution with inference time 0.12 sec per sample.",
+      "tech": ["NLP", "Multimodal", "SigLIP", "CoCa", "Ensemble Learning", "Python"],
+      "github": "http://github.com/shyamaljoshi1/",
+      "color": "#f59e0b"
+    },
+    {
+      "title": "Charusat LOR System",
+      "type": "University Project",
+      "description": "Coordinated a team of 5 developers to digitize the Letter of Recommendation process for CSPIT Department, achieving 100% streamlining of administrative workflows.",
+      "tech": ["React.js", "TailwindCSS", "SCSS", "Node.js"],
+      "github": "http://github.com/shyamaljoshi1/",
+      "color": "#10b981"
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.Tech (CSE)",
+      "institution": "Indian Institute of Technology, Jodhpur",
+      "year": "2025 — Present",
+      "score": "—"
+    },
+    {
+      "degree": "B.Tech (CE)",
+      "institution": "Charusat University",
+      "year": "2020 — 2024",
+      "score": "CGPA: 9.46"
+    },
+    {
+      "degree": "Class 12",
+      "institution": "Sigma School, Porbandar",
+      "year": "2020",
+      "score": "83.69%"
+    },
+    {
+      "degree": "Class 10",
+      "institution": "Sigma School, Porbandar",
+      "year": "2018",
+      "score": "90.67%"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "year": "2023",
+      "color": "#f59e0b"
+    },
+    {
+      "name": "Microsoft Azure Fundamentals",
+      "issuer": "Microsoft",
+      "year": "2023",
+      "color": "#3b82f6"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Led Tech Sessions",
+      "description": "Delivered engaging sessions for 60+ students on Open Source, Git-GitHub, and C++ STL"
+    },
+    {
+      "title": "CodePie 3.0 Organizer",
+      "description": "Organized university-level coding competition with 550+ participants, supervised 30 core team members and 120 volunteers"
+    },
+    {
+      "title": "Instagram Creator",
+      "description": "Building a community of 10.8K+ followers on tech and AI content"
+    }
+  ],
+  "skills": {
+    "core": ["DBMS", "OOP", "Computer Networking", "OS", "DSA", "Machine Learning", "Deep Learning"],
+    "languages": ["C++", "Python", "JavaScript", "SQL"],
+    "tools": ["Git", "Docker", "Linux", "VS Code", "Kubernetes", "Jenkins"],
+    "monitoring": ["Prometheus", "Grafana", "Azure Monitor", "Application Insights"],
+    "web": ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js"],
+    "cloud": ["AWS", "Azure", "EKS", "Azure Key Vault"],
+    "ml": ["TensorFlow", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "NLP", "LLM"]
+  }
+}

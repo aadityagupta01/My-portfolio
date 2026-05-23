@@ -1,0 +1,200 @@
+/* ============================================================
+   Navbar — Glassmorphism fixed top bar
+   ============================================================ */
+
+.navbar {
+  --nav-bg-opacity: 0.45;
+  --nav-blur: 12px;
+  --nav-border-opacity: 0.06;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px;
+  pointer-events: none;
+  /* will-change for smooth repaints */
+  will-change: transform, opacity;
+}
+
+/* Glassmorphism background layer (pseudo-element for perf) */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, var(--nav-bg-opacity));
+  backdrop-filter: blur(var(--nav-blur));
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+  border-bottom: 1px solid rgba(255, 255, 255, var(--nav-border-opacity));
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  transition: background 0.35s ease, backdrop-filter 0.35s ease;
+  z-index: -1;
+}
+
+/* Stronger background once scrolled */
+.navbar--scrolled::before {
+  background: rgba(10, 10, 10, 0.88);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Inner flex container ---- */
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+  max-width: 680px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---- Pill buttons ---- */
+.navbar__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Subtle inner glow */
+.navbar__pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(16, 185, 129, 0.08) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.navbar__pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow:
+    0 4px 20px rgba(16, 185, 129, 0.1),
+    0 0 0 1px rgba(16, 185, 129, 0.08);
+}
+
+.navbar__pill:hover::before {
+  opacity: 1;
+}
+
+.navbar__pill:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+/* ---- Pill label ---- */
+.navbar__pill-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Icons ---- */
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-icon--circle svg {
+  filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.navbar__pill:hover .nav-icon--circle svg {
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.75));
+}
+
+.nav-icon--briefcase {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.3s ease;
+}
+
+.navbar__pill:hover .nav-icon--briefcase {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-icon--check svg {
+  transition: transform 0.3s ease;
+}
+
+.navbar__pill:hover .nav-icon--check svg {
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .navbar__inner {
+    gap: 8px;
+  }
+
+  .navbar__pill {
+    padding: 8px 16px;
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 12px;
+  }
+
+  .navbar__inner {
+    gap: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .navbar__pill {
+    padding: 7px 12px;
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .nav-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+}
