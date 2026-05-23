@@ -3,7 +3,7 @@
     "name": "Shyamal",
     "lastName": "Joshi",
     "title": "Software Engineer & Cloud Architect",
-    "subtitle": "M.Tech CSE @ IIT Jodhpur",
+    "subtitle": "CSE @ IIT Jodhpur",
     "tagline": "Building scalable cloud infrastructure, intelligent ML solutions, and full-stack applications that drive real-world impact...",
     "bio": "Hi, I'm Shyamal, a software engineer and cloud architect passionate about building scalable systems, automating infrastructure, and solving complex problems with machine learning. Currently pursuing M.Tech at IIT Jodhpur.",
     "description": "From orchestrating 40+ microservices on Kubernetes to crafting ML models that predict with precision — I blend DevOps, cloud architecture, and AI to build solutions that matter. My work spans AWS, Azure, Docker, React, and beyond.",
@@ -141,7 +141,7 @@
       "degree": "M.Tech (CSE)",
       "institution": "Indian Institute of Technology, Jodhpur",
       "year": "2025 — Present",
-      "score": "—"
+      "score": "CGPA: 8.30"
     },
     {
       "degree": "B.Tech (CE)",

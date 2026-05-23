@@ -125,11 +125,6 @@ const WhatIDo = () => {
                 <h3 className="whatido__card-title">{item.title}</h3>
                 <p className="whatido__card-desc">{item.description}</p>
               </div>
-
-              {/* arrow button */}
-              <button className="whatido__card-arrow" aria-label={`Learn more about ${item.title}`}>
-                <span>→</span>
-              </button>
             </div>
           ))}
         </div>

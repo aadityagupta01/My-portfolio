@@ -94,11 +94,10 @@
 }
 
 .contact-social-card:hover {
-  transform: scale(1.12) translateY(-4px);
-  background: rgba(255, 255, 255, 0.07);
-  border-color: var(--brand-color);
-  box-shadow: 0 0 28px -4px var(--brand-color),
-              0 0 60px -12px var(--brand-color);
+  transform: scale(1.06) translateY(-3px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: color-mix(in srgb, var(--brand-color) 50%, transparent);
+  box-shadow: 0 0 16px -6px color-mix(in srgb, var(--brand-color) 35%, transparent);
 }
 
 /* ── Icon ── */
@@ -118,17 +117,14 @@
 }
 
 .contact-social-card:hover .contact-social-icon {
-  filter: drop-shadow(0 0 8px var(--brand-color));
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--brand-color) 40%, transparent));
 }
 
-/* ── Instagram icon gets a gradient fill ── */
-.contact-social--instagram .contact-social-icon svg {
-  fill: url(#ig-gradient);
+/* ── Instagram icon styling ── */
+.contact-social--instagram .contact-social-icon {
+  color: #E1306C;
 }
 
-/* We inject the gradient def via CSS trick — but since SVG gradients need defs
-   inside the SVG, we handle this with a fallback solid colour and let the 
-   component use currentColor with CSS color set to pink */
 .contact-social--instagram {
   --brand-color: #E1306C;
 }

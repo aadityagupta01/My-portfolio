@@ -17,6 +17,7 @@ const Hero = () => {
   const firstNameRef = useRef(null);
   const techRowRef = useRef(null);
   const subtitleRef = useRef(null);
+  const scrollIndicatorRef = useRef(null);
 
   const { personal, techStack } = portfolioData;
 
@@ -37,6 +38,10 @@ const Hero = () => {
       const techPills = techRowRef.current?.querySelectorAll('.hero-tech-pill');
       if (techPills) {
         gsap.set(techPills, { opacity: 0, y: 30, scale: 0.8 });
+      }
+
+      if (scrollIndicatorRef.current) {
+        gsap.set(scrollIndicatorRef.current, { opacity: 0 });
       }
 
       // ── MASTER TIMELINE ──
@@ -110,6 +115,15 @@ const Hero = () => {
         );
       }
 
+      // Scroll indicator fade in at end
+      if (scrollIndicatorRef.current) {
+        tl.to(
+          scrollIndicatorRef.current,
+          { opacity: 1, duration: 0.8 },
+          '-=0.3'
+        );
+      }
+
       // ── PULSATING GREEN GLOW ──
       gsap.to(glowRef.current, {
         scale: 1.15,
@@ -120,10 +134,10 @@ const Hero = () => {
         ease: 'sine.inOut',
       });
 
-      // ── SCROLL PARALLAX ON PHOTO ──
+      // ── SCROLL PARALLAX ON PHOTO ONLY ──
       gsap.to(photoContainerRef.current, {
         y: -60,
-        scale: 0.92,
+        scale: 0.95,
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
@@ -132,16 +146,18 @@ const Hero = () => {
         },
       });
 
-      // ── SCROLL PARALLAX ON NAME TEXT ──
-      gsap.to(firstNameRef.current, {
-        y: -40,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: '60% top',
-          end: 'bottom top',
-          scrub: 2,
-        },
-      });
+      // ── Fade out scroll indicator on scroll ──
+      if (scrollIndicatorRef.current) {
+        gsap.to(scrollIndicatorRef.current, {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: '5% top',
+            end: '15% top',
+            scrub: true,
+          },
+        });
+      }
 
       // ── MOUSE PARALLAX TILT ON PHOTO ──
       const section = sectionRef.current;
@@ -262,30 +278,33 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* ─── MASSIVE NAME ─── */}
-        <div className="hero-name-block">
-          <span className="hero-lastname" ref={lastNameRef}>
-            {personal.lastName?.toUpperCase()}
-          </span>
-          <h1 className="hero-firstname" ref={firstNameRef}>
-            {personal.name?.toUpperCase()}
-          </h1>
-        </div>
-
-        {/* ─── TECH ROW ─── */}
-        <div className="hero-tech-row" ref={techRowRef}>
-          {techStack.map((tech, i) => (
-            <span className="hero-tech-pill" key={i}>
-              {tech}
+        {/* ─── NAME + TECH + SCROLL in normal document flow ─── */}
+        <div className="hero-name-tech-block">
+          {/* ─── MASSIVE NAME ─── */}
+          <div className="hero-name-block">
+            <span className="hero-lastname" ref={lastNameRef}>
+              {personal.lastName?.toUpperCase()}
             </span>
-          ))}
-        </div>
-      </div>
+            <h1 className="hero-firstname" ref={firstNameRef}>
+              {personal.name?.toUpperCase()}
+            </h1>
+          </div>
 
-      {/* Scroll indicator */}
-      <div className="hero-scroll-indicator">
-        <div className="hero-scroll-line" />
-        <span>Scroll</span>
+          {/* ─── TECH ROW ─── */}
+          <div className="hero-tech-row" ref={techRowRef}>
+            {techStack.map((tech, i) => (
+              <span className="hero-tech-pill" key={i}>
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          {/* Scroll indicator — in normal flow, not absolute */}
+          <div className="hero-scroll-indicator" ref={scrollIndicatorRef}>
+            <div className="hero-scroll-line" />
+            <span>Scroll</span>
+          </div>
+        </div>
       </div>
     </section>
   );

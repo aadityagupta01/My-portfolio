@@ -59,7 +59,7 @@
   background: #1a1a1a;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.06);
-  cursor: pointer;
+  cursor: default;
   transition:
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -148,46 +148,10 @@
 
 .whatido__card-desc {
   font-family: 'Inter', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.45);
   margin: 0;
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* ---------- arrow button ---------- */
-.whatido__card-arrow {
-  flex-shrink: 0;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: none;
-  background: #10b981;
-  color: #ffffff;
-  font-size: 1.05rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.whatido__card-arrow span {
-  line-height: 1;
-  display: block;
-  transform: translateX(1px);
-}
-
-.whatido__card:hover .whatido__card-arrow {
-  background: #0eda8e;
-  transform: scale(1.1);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.4);
+  line-height: 1.5;
 }
 
 /* ============================================================
@@ -236,10 +200,5 @@
     width: 22px;
     height: 22px;
   }
-
-  .whatido__card-arrow {
-    width: 34px;
-    height: 34px;
-    font-size: 0.95rem;
-  }
 }
+
