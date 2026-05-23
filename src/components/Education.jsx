@@ -136,7 +136,7 @@ const Education = () => {
             </div>
 
             {/* Card */}
-            <div className="education-card">
+            <div className="education-card" data-cursor="-pointer">
               <div className="education-card-icon">
                 {getIcon(item.degree)}
               </div>

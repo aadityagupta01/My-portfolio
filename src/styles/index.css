@@ -275,3 +275,23 @@ a:hover {
 #root {
   min-height: 100vh;
 }
+
+/* ========================================
+   CUSTOM CURSOR OVERRIDES
+   ======================================== */
+@media (hover: hover) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select,
+  .navbar__pill,
+  .projects__card,
+  .whatido__card,
+  .contact-social-card,
+  [data-cursor] {
+    cursor: none !important;
+  }
+}
+

@@ -153,6 +153,8 @@ const Certifications = () => {
               key={index}
               ref={(el) => (certCardsRef.current[index] = el)}
               style={{ '--cert-color': cert.color }}
+              data-cursor="-pointer"
+              data-cursor-color={cert.color}
             >
               {/* Glow background */}
               <div className="certach-cert-glow" />
@@ -199,6 +201,7 @@ const Certifications = () => {
                 className="certach-ach-card"
                 key={index}
                 ref={(el) => (achCardsRef.current[index] = el)}
+                data-cursor="-pointer"
               >
                 {/* Icon */}
                 <div className="certach-ach-icon">

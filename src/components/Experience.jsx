@@ -195,6 +195,7 @@ const Experience = () => {
             <div
               className="exp-card"
               ref={(el) => (cardsRef.current[index] = el)}
+              data-cursor="-pointer"
             >
               <div className="exp-card-inner">
                 {/* Card accent border */}

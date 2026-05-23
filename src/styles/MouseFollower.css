@@ -1,0 +1,153 @@
+/* ============================================================
+   CUSTOM MOUSE FOLLOWER
+   ============================================================ */
+
+.mf-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: opacity 0.3s ease;
+}
+
+/* Base cursor shape (inner dot) */
+.mf-cursor-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background-color: var(--accent, #10b981);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.9);
+  border: 0px solid transparent;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: 
+    width 0.3s cubic-bezier(0.25, 1, 0.28, 1),
+    height 0.3s cubic-bezier(0.25, 1, 0.28, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.15s ease-out;
+}
+
+/* Generic Pointer state: links, buttons, interactive pills */
+.mf-cursor.-pointer .mf-cursor-inner {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid var(--accent, #10b981);
+  box-shadow: 0 0 24px var(--accent-glow, rgba(16, 185, 129, 0.25));
+}
+
+/* Arrow state for Projects & WhatIDo */
+.mf-cursor.-arrow .mf-cursor-inner {
+  width: 72px;
+  height: 72px;
+  background-color: var(--cursor-accent, var(--accent, #10b981));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5), 
+    0 0 20px var(--cursor-accent-glow, rgba(16, 185, 129, 0.3));
+  color: #ffffff;
+}
+
+/* Text state */
+.mf-cursor.-text .mf-cursor-inner {
+  width: 80px;
+  height: 80px;
+  background-color: var(--cursor-accent, var(--accent, #10b981));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5), 
+    0 0 20px var(--cursor-accent-glow, rgba(16, 185, 129, 0.3));
+  color: #ffffff;
+}
+
+/* Exclusion state for invert effect (on social icons or light UI elements) */
+.mf-cursor.-exclusion .mf-cursor-inner {
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  box-shadow: none;
+}
+
+/* Active click state: shrinks cursor slightly for interactive feedback */
+.mf-cursor.-active .mf-cursor-inner {
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+/* Arrow element within the cursor */
+.mf-cursor-arrow-svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform: scale(0.4) rotate(-45deg);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+}
+
+.mf-cursor.-arrow .mf-cursor-arrow-svg {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* Text element within the cursor */
+.mf-cursor-text-span {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+  font-family: var(--font-heading), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+.mf-cursor.-text .mf-cursor-text-span {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Custom Mouse Pointer (classic black arrow with white border) */
+.mf-pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: opacity 0.25s ease;
+}
+
+.mf-pointer-arrow {
+  width: 21px;
+  height: 21px;
+}
+
+/* Hide on touch-only devices */
+@media (hover: none) {
+  .mf-cursor,
+  .mf-pointer {
+    display: none !important;
+  }
+}
