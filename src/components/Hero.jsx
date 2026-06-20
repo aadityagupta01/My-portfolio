@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import portfolioData from '../data/portfolio.json';
-import '../styles/Hero.css';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import portfolioData from "../data/portfolio.json";
+import "../styles/Hero.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,10 +32,10 @@ const Hero = () => {
       gsap.set(firstNameRef.current, {
         opacity: 0,
         y: 80,
-        clipPath: 'inset(100% 0 0 0)',
+        clipPath: "inset(100% 0 0 0)",
       });
 
-      const techPills = techRowRef.current?.querySelectorAll('.hero-tech-pill');
+      const techPills = techRowRef.current?.querySelectorAll(".hero-tech-pill");
       if (techPills) {
         gsap.set(techPills, { opacity: 0, y: 30, scale: 0.8 });
       }
@@ -46,7 +46,7 @@ const Hero = () => {
 
       // ── MASTER TIMELINE ──
       const tl = gsap.timeline({
-        defaults: { ease: 'power3.out' },
+        defaults: { ease: "power3.out" },
         delay: 0.3,
       });
 
@@ -55,36 +55,20 @@ const Hero = () => {
         opacity: 1,
         scale: 1,
         duration: 1.2,
-        ease: 'elastic.out(1, 0.75)',
+        ease: "elastic.out(1, 0.75)",
       });
 
       // Title slides in from left
-      tl.to(
-        titleLeftRef.current,
-        { opacity: 1, x: 0, duration: 0.9 },
-        '-=0.7'
-      );
+      tl.to(titleLeftRef.current, { opacity: 1, x: 0, duration: 0.9 }, "-=0.7");
 
       // Bio slides in from right
-      tl.to(
-        bioRightRef.current,
-        { opacity: 1, x: 0, duration: 0.9 },
-        '-=0.7'
-      );
+      tl.to(bioRightRef.current, { opacity: 1, x: 0, duration: 0.9 }, "-=0.7");
 
       // Subtitle
-      tl.to(
-        subtitleRef.current,
-        { opacity: 1, y: 0, duration: 0.6 },
-        '-=0.4'
-      );
+      tl.to(subtitleRef.current, { opacity: 1, y: 0, duration: 0.6 }, "-=0.4");
 
       // Last name (small text above)
-      tl.to(
-        lastNameRef.current,
-        { opacity: 1, y: 0, duration: 0.7 },
-        '-=0.3'
-      );
+      tl.to(lastNameRef.current, { opacity: 1, y: 0, duration: 0.7 }, "-=0.3");
 
       // First name reveal (clip-path wipe)
       tl.to(
@@ -92,11 +76,11 @@ const Hero = () => {
         {
           opacity: 1,
           y: 0,
-          clipPath: 'inset(0% 0 0 0)',
+          clipPath: "inset(0% 0 0 0)",
           duration: 1,
-          ease: 'power4.out',
+          ease: "power4.out",
         },
-        '-=0.4'
+        "-=0.4",
       );
 
       // Tech pills stagger
@@ -109,9 +93,9 @@ const Hero = () => {
             scale: 1,
             duration: 0.5,
             stagger: 0.06,
-            ease: 'back.out(1.7)',
+            ease: "back.out(1.7)",
           },
-          '-=0.5'
+          "-=0.5",
         );
       }
 
@@ -120,7 +104,7 @@ const Hero = () => {
         tl.to(
           scrollIndicatorRef.current,
           { opacity: 1, duration: 0.8 },
-          '-=0.3'
+          "-=0.3",
         );
       }
 
@@ -131,7 +115,7 @@ const Hero = () => {
         duration: 2.2,
         repeat: -1,
         yoyo: true,
-        ease: 'sine.inOut',
+        ease: "sine.inOut",
       });
 
       // ── SCROLL PARALLAX ON PHOTO ONLY ──
@@ -139,8 +123,8 @@ const Hero = () => {
         y: -60,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top top',
-          end: 'bottom top',
+          start: "top top",
+          end: "bottom top",
           scrub: 1.5,
         },
       });
@@ -151,8 +135,8 @@ const Hero = () => {
           opacity: 0,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: '5% top',
-            end: '15% top',
+            start: "5% top",
+            end: "15% top",
             scrub: true,
           },
         });
@@ -170,7 +154,7 @@ const Hero = () => {
           rotateY: xPercent * 12,
           rotateX: -yPercent * 12,
           duration: 0.8,
-          ease: 'power2.out',
+          ease: "power2.out",
         });
 
         // Subtle parallax shift on glow
@@ -178,11 +162,11 @@ const Hero = () => {
           x: xPercent * 15,
           y: yPercent * 15,
           duration: 1,
-          ease: 'power2.out',
+          ease: "power2.out",
         });
       };
 
-      section?.addEventListener('mousemove', handleMouseMove);
+      section?.addEventListener("mousemove", handleMouseMove);
 
       // Reset on mouse leave
       const handleMouseLeave = () => {
@@ -190,17 +174,17 @@ const Hero = () => {
           rotateY: 0,
           rotateX: 0,
           duration: 0.6,
-          ease: 'power2.out',
+          ease: "power2.out",
         });
         gsap.to(glowRef.current, {
           x: 0,
           y: 0,
           duration: 0.6,
-          ease: 'power2.out',
+          ease: "power2.out",
         });
       };
 
-      section?.addEventListener('mouseleave', handleMouseLeave);
+      section?.addEventListener("mouseleave", handleMouseLeave);
 
       // Store cleanup refs
       section._handleMouseMove = handleMouseMove;
@@ -211,14 +195,14 @@ const Hero = () => {
       ctx.revert();
       const section = sectionRef.current;
       if (section) {
-        section.removeEventListener('mousemove', section._handleMouseMove);
-        section.removeEventListener('mouseleave', section._handleMouseLeave);
+        section.removeEventListener("mousemove", section._handleMouseMove);
+        section.removeEventListener("mouseleave", section._handleMouseLeave);
       }
     };
   }, []);
 
   // Split title into two lines
-  const titleParts = personal.title.split('&');
+  const titleParts = personal.title.split("&");
 
   return (
     <section className="hero" ref={sectionRef} id="hero">
@@ -233,9 +217,7 @@ const Hero = () => {
           {/* LEFT — Title */}
           <div className="hero-col-left" ref={titleLeftRef}>
             <p className="hero-label">// Intro</p>
-            <h2 className="hero-title-line">
-              {titleParts[0]?.trim()}
-            </h2>
+            <h2 className="hero-title-line">{titleParts[0]?.trim()}</h2>
             <h2 className="hero-title-line hero-title-line--accent">
               &amp; {titleParts[1]?.trim()}
             </h2>
@@ -244,10 +226,13 @@ const Hero = () => {
 
           {/* CENTER — Photo */}
           <div className="hero-col-center" ref={photoContainerRef}>
-            <div className="hero-photo-wrapper" style={{ perspective: '800px' }}>
+            <div
+              className="hero-photo-wrapper"
+              style={{ perspective: "800px" }}
+            >
               <div className="hero-glow" ref={glowRef} />
               <div className="hero-glow-ring" />
-              
+
               {/* Rotating Circular Text */}
               <svg className="hero-circular-text" viewBox="0 0 340 340">
                 <defs>
@@ -257,8 +242,13 @@ const Hero = () => {
                   />
                 </defs>
                 <text>
-                  <textPath href="#heroCirclePath" startOffset="0%" textLength="940" lengthAdjust="spacing">
-                    TECH CONTENT CREATOR ✦ IITIAN ✦ SOFTWARE ENGINEER ✦ 
+                  <textPath
+                    href="#heroCirclePath"
+                    startOffset="0%"
+                    textLength="940"
+                    lengthAdjust="spacing"
+                  >
+                    {" WEB DEVELOPER ✦ NiT ✦ AWS UG KOLKATA VOLUNTEER ✦"}
                   </textPath>
                 </text>
               </svg>
@@ -276,17 +266,22 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* RIGHT — Bio */}
+          {/* RIGHT — Bio / Slogan */}
           <div className="hero-col-right" ref={bioRightRef}>
-            <p className="hero-label">// About</p>
-            <p className="hero-bio">{personal.description}</p>
+            {/* Three-line slogan (Think / Code / Deploy) styled like the name */}
+            <div className="hero-slogan" aria-label="Think Code Deploy">
+              <span className="hero-slogan-line">Think</span>
+              <span className="hero-slogan-line">Code</span>
+              <span className="hero-slogan-line">Deploy</span>
+            </div>
+
             <div className="hero-bio-stats">
               <div className="hero-stat">
-                <span className="hero-stat-number">40+</span>
-                <span className="hero-stat-label">Microservices</span>
+                <span className="hero-stat-number">2x</span>
+                <span className="hero-stat-label">Hackathon Finalist</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-number">10.8K</span>
+                <span className="hero-stat-number">2.6K</span>
                 <span className="hero-stat-label">Followers</span>
               </div>
             </div>

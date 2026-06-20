@@ -11,12 +11,19 @@
 
 /* ── Subtle grid background ───────────────────────────────────── */
 .education::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      color-mix(in srgb, var(--border) 40%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--border) 40%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 60px 60px;
   pointer-events: none;
 }
@@ -31,7 +38,7 @@
 
 .education-label {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -45,7 +52,7 @@
 }
 
 .education-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(32px, 4.5vw, 52px);
   font-weight: 700;
   color: var(--text-primary);
@@ -55,14 +62,18 @@
 }
 
 .education-accent {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-light) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .education-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(15px, 1.4vw, 18px);
   color: var(--text-secondary);
   line-height: 1.6;
@@ -138,7 +149,10 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 14px;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
 }
 
 .education-card:hover {
@@ -175,7 +189,7 @@
 }
 
 .education-degree {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
@@ -184,7 +198,7 @@
 }
 
 .education-institution {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: var(--accent);
@@ -202,7 +216,7 @@
 }
 
 .education-year {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
@@ -210,7 +224,7 @@
 }
 
 .education-score {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
   color: var(--accent);

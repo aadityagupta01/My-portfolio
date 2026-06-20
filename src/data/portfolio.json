@@ -1,69 +1,112 @@
 {
   "personal": {
-    "name": "Shyamal",
-    "lastName": "Joshi",
-    "title": "Software Engineer & Cloud Architect",
-    "subtitle": "CSE @ IIT Jodhpur",
+    "name": "Aaditya",
+    "lastName": "Gupta",
+    "title": "Full Stack Developer & UI/UX designer",
+    "subtitle": "CSE @ Narula Institute of Technology",
     "tagline": "Building scalable cloud infrastructure, intelligent ML solutions, and full-stack applications that drive real-world impact...",
-    "bio": "Hi, I'm Shyamal, a software engineer and cloud architect passionate about building scalable systems, automating infrastructure, and solving complex problems with machine learning. Currently pursuing M.Tech at IIT Jodhpur.",
-    "description": "From orchestrating 40+ microservices on Kubernetes to crafting ML models that predict with precision — I blend DevOps, cloud architecture, and AI to build solutions that matter. My work spans AWS, Azure, Docker, React, and beyond.",
-    "email": "joshishyamal101@gmail.com",
-    "phone": "+91-8780502810",
-    "photo": "/images/shyamal-photo.jpg",
-    "resumeLink": "/Shyamal_Joshi_Resume.pdf"
+    "bio": "Hi, I'm Aaditya, a frontend developer and UI/UX designer passionate about creating intuitive, high-performance user experiences. Currently pursuing M.Tech at IIT Jodhpur.",
+    "description": "Aaditya Gupta is a M.Tech Computer Science and Engineering student at the Indian Institute of Technology Jodhpur. A Full-Stack Web Developer with a strong foundation in AI/ML and a passion for Deep Learning, Autonomous Agents, Finalist (Top 2%) in the IndiaAI Impact Buildathon 2026, Volunteer for AWS User Group Kolkata and Campus Ambassador for EDC IIT Delhi.",
+    "aboutDescriptionSegments": [
+      { "text": "Hi, I am ", "highlight": false },
+      { "text": "Aaditya Gupta", "highlight": true },
+      { "text": ", a ", "highlight": false },
+      { "text": "B.Tech Computer Science and Engineering", "highlight": true },
+      { "text": " undergraduate. As a ", "highlight": false },
+      { "text": "Full-Stack Web Developer", "highlight": true },
+      { "text": " passionate about ", "highlight": false },
+      { "text": "AI/ML", "highlight": true },
+      { "text": ", ", "highlight": false },
+      { "text": "Deep Learning", "highlight": true },
+      { "text": ", and ", "highlight": false },
+      { "text": "Autonomous Agents", "highlight": true },
+      {
+        "text": ", I focus on building applications that bridge the gap between intelligent algorithms and robust web architectures. Recently, I was recognized as a ",
+        "highlight": false
+      },
+      {
+        "text": "Finalist (Top 2%) in the IndiaAI Impact Buildathon 2026",
+        "highlight": true
+      },
+      {
+        "text": ", showcasing my ability to build real-world AI solutions under pressure. Alongside my technical pursuits, I am currently a ",
+        "highlight": false
+      },
+      { "text": "Volunteer for AWS User Group Kolkata", "highlight": true },
+      {
+        "text": ", where I utilize my communication and management skills to coordinate tech events and foster developer engagement, and I have served as a top-performing ",
+        "highlight": false
+      },
+      { "text": "Campus Ambassador for EDC IIT Delhi", "highlight": true },
+      {
+        "text": ". I thrive in fast-paced hackathons, collaborative team environments, and projects that challenge the boundaries of modern technology.",
+        "highlight": false
+      }
+    ],
+    "email": "aadiconnects369@gmail.com",
+    "phone": "+91-010101010101",
+    "photo": "/images/aaditya-photo.jpeg",
+    "resumeLink": "/Aaditya_Gupta_Resume.pdf"
   },
   "social": [
     {
       "name": "GitHub",
-      "url": "http://github.com/shyamaljoshi1/",
+      "url": "https://github.com/aadityagupta01",
       "icon": "github"
     },
     {
       "name": "LinkedIn",
-      "url": "https://www.linkedin.com/in/shyamaljoshi/",
-      "icon": "linkedin"
+      "url": "https://www.linkedin.com/in/aaditya-gupta-60ba54325/",
+      "icon": "linkedin",
+      "followers": "2.6k"
     },
     {
       "name": "LeetCode",
-      "url": "https://leetcode.com/u/shyamaljoshi1/",
+      "url": "https://leetcode.com/u/Aaditya_aGupta/",
       "icon": "leetcode"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/thefutureguyy.ai/",
-      "icon": "instagram",
-      "followers": "10.8K"
+      "url": "https://www.instagram.com/aaditya_gupta20/",
+      "icon": "instagram"
     },
     {
       "name": "Email",
-      "url": "mailto:joshishyamal101@gmail.com",
+      "url": "mailto:aadiconnects369@gmail.com",
       "icon": "email"
     }
   ],
   "techStack": [
-    "React", "Node.js", "Express.js", "JavaScript", "Python", "C++",
-    "Docker", "Kubernetes", "AWS", "Azure", "Jenkins", "Git",
-    "Prometheus", "Grafana", "TensorFlow", "MySQL", "Linux", "HTML/CSS"
+    "Windows",
+    "Linux",
+    "Beginner in React JS",
+    "React Native",
+    "Expo",
+    "Apache Tomcat",
+    "AWS Basics",
+    "Uvicorn",
+    "Beginner in Node-Js",
+    "Express",
+    "FastAPI",
+    "Skilled in HTML",
+    "CSS",
+    "Javascript",
+    "MYSQL",
+    "Mongo-DB",
+    "Experienced with GIT",
+    "Stripe API",
+    "ScikitLearn",
+    "Librosa",
+    "Data Structure and Algorithms",
+    "OOPs",
+    "DBMS",
+    "Basic Networking",
+    "Proficient in Python",
+    "C",
+    "C++",
+    "SQL"
   ],
   "whatIDo": [
-    {
-      "title": "Cloud & DevOps",
-      "description": "AWS, Azure, Kubernetes, Docker — Architecting scalable cloud infrastructure for high availability.",
-      "icon": "cloud",
-      "color": "#10b981"
-    },
-    {
-      "title": "CI/CD Pipelines",
-      "description": "Jenkins, automated deployments, rollbacks — Streamlining code release with advanced pipelines.",
-      "icon": "pipeline",
-      "color": "#3b82f6"
-    },
-    {
-      "title": "Machine Learning",
-      "description": "Bayesian Networks, Deep Learning, NLP — Building intelligent models for real-world predictions.",
-      "icon": "brain",
-      "color": "#8b5cf6"
-    },
     {
       "title": "Full-Stack Web Dev",
       "description": "React, Node.js, Express — Crafting responsive, performant web applications end-to-end.",
@@ -71,132 +114,167 @@
       "color": "#f59e0b"
     },
     {
-      "title": "Monitoring & Observability",
-      "description": "Prometheus, Grafana, Azure Monitor — Reducing incident detection time by 60%.",
-      "icon": "monitor",
-      "color": "#ef4444"
+      "title": "Machine Learning",
+      "description": "Scikit-Learn, TensorFlow, Librosa — Building intelligent models for data-driven insights.",
+      "icon": "brain",
+      "color": "#8b5cf6"
     },
     {
-      "title": "Containerization",
-      "description": "Docker, Kubernetes, EKS — Orchestrating 40+ microservices with automated deployments.",
-      "icon": "container",
-      "color": "#06b6d4"
+      "title": "Cloud & DevOps",
+      "description": "AWS, Docker, Kubernetes — Designing scalable cloud infrastructure with automation.",
+      "icon": "cloud",
+      "color": "#10b981"
     }
   ],
   "experience": [
     {
-      "role": "Software Engineer (DevOps)",
-      "company": "Zeus Learning",
-      "period": "June 2024 — July 2025",
+      "role": "Web Development Intern",
+      "company": "ShadowFox",
+      "period": "June 2026 — Present",
       "highlights": [
-        "Spearheaded cloud infrastructure setup and deployment across Azure and AWS for high availability and scalability",
-        "Designed and maintained advanced CI/CD pipelines in Jenkins for code release, configuration generation, and database operations",
-        "Architected scalable Kubernetes (EKS) platform on AWS, orchestrating 40+ microservices with automated deployments and rollbacks",
-        "Delivered containerized applications using multistage Docker builds, cutting image size by 40%",
-        "Built monitoring and alerting stacks with Azure Monitor, Application Insights, and Log Analytics, reducing incident detection time by 60%",
-        "Integrated Azure Key Vault with CI/CD pipelines for secure secret management",
-        "Collaborated with cross-functional teams to drive DevOps adoption, improving rollout frequency and reducing downtime"
+        "Designed and developed a responsive personal portfolio website to cleanly showcase technical projects and professional achievements.",
+        "Built a foundational e-commerce web application, implementing core navigation, product displays, and structured user interfaces.",
+        "Progressed through structured beginner to intermediate project levels, achieving targeted development goals within a fast-paced timeline.",
+        "Applied self-paced technical learning to solve coding challenges, debug interfaces, and steadily improve web responsiveness and design."
       ]
     },
     {
-      "role": "Full-Stack Web Development Intern",
-      "company": "Yottol",
-      "period": "May 2023 — August 2023",
+      "role": "Machine Learning Intern",
+      "company": "EduSkills Foundation × Google (AI-ML Virtual Internship)",
+      "period": "Oct 2025 — Dec 2025",
       "highlights": [
-        "Built logic algorithms and managed extensive data using Node.js and React.js, influencing the company's product",
-        "Automated tasks with Node.js algorithms, significantly boosting efficiency by 25%",
-        "Constructed and deployed REST APIs with Node.js, Express.js, and MySQL",
-        "Integrated MERN components (MySQL, Express.js, React, Node.js) to augment product functionality"
+        "Completed Google’s structured AI/ML Learning Pathway, mastering TensorFlow, image classification, object detection, and product image search via hands-on labs and assessments",
+        "Built and trained production-ready image classification models leveraging TensorFlow for optimized accuracy and performance",
+        "Implemented robust object detection pipelines and product image search systems using advanced Google ML APIs and development tooling",
+        "Engaged in comprehensive technical evaluations and hands-on developer modules to validate and refine machine learning workflows"
       ]
     }
   ],
   "projects": [
     {
-      "title": "Decision Making in Diabetics Using Bayesian Network",
-      "type": "Course Project — IIT Jodhpur",
-      "description": "Developed a diabetes prediction model using Bayesian Networks (pgmpy) with Hill Climbing + BIC scoring, integrating medical constraints for causal validity. Compared with Logistic Regression, SVM, and Random Forest; deployed via Streamlit.",
-      "tech": ["Python", "pgmpy", "scikit-learn", "Streamlit", "Pandas", "NumPy"],
-      "github": "http://github.com/shyamaljoshi1/",
+      "title": "My Portfolio Project",
+      "type": "Shadowfox Internship Project",
+      "description": "Designed and developed a highly interactive, responsive personal portfolio website featuring high-performance animations and smooth visual transitions. Leveraged modern component architecture to ensure seamless cross-device rendering and fast loading times.",
+      "tech": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js",
+        "GSAP",
+        "Vite",
+        "ESLint"
+      ],
+      "github": "https://github.com/aadityagupta01",
       "color": "#8b5cf6"
     },
     {
-      "title": "Smart Product Pricing",
-      "type": "Amazon ML Challenge 2025",
-      "description": "Built an ensemble model by training parallel MLPs on CoCa and SigLIP multimodal embeddings, achieving sMAPE of 40.06%. Developed fast and efficient solution with inference time 0.12 sec per sample.",
-      "tech": ["NLP", "Multimodal", "SigLIP", "CoCa", "Ensemble Learning", "Python"],
-      "github": "http://github.com/shyamaljoshi1/",
+      "title": "AI Voice Detection System",
+      "type": "India AI Impact Buildathon 2026 Project",
+      "description": "Built an ML pipeline and a secure, real-time FastAPI to classify audio as AI-generated or human-spoken across 5 languages. Extracted acoustic features from curated data and trained optimal classifiers, returning JSON responses with confidence scores and automated explanations.",
+      "tech": [
+        "Python",
+        "FastAPI",
+        "Scikit-Learn",
+        "Librosa",
+        "MFCC",
+        "Uvicorn"
+      ],
+      "github": "https://github.com/aadityagupta01/AI-Voice-Detection",
       "color": "#f59e0b"
     },
     {
-      "title": "Charusat LOR System",
+      "title": "Medicinal Plant Classification System",
       "type": "University Project",
-      "description": "Coordinated a team of 5 developers to digitize the Letter of Recommendation process for CSPIT Department, achieving 100% streamlining of administrative workflows.",
-      "tech": ["React.js", "TailwindCSS", "SCSS", "Node.js"],
-      "github": "http://github.com/shyamaljoshi1/",
+      "description": "Engineered an end-to-end computer vision application that utilizes a fine-tuned ConvNeXt classifier to identify medicinal plants from leaf images with high precision.",
+      "tech": ["Python", "PyTorch", "FastAPI", "Docker", "React.js"],
+      "github": "https://github.com/aadityagupta01",
       "color": "#10b981"
     }
   ],
   "education": [
     {
-      "degree": "M.Tech (CSE)",
-      "institution": "Indian Institute of Technology, Jodhpur",
-      "year": "2025 — Present",
-      "score": "CGPA: 8.30"
-    },
-    {
-      "degree": "B.Tech (CE)",
-      "institution": "Charusat University",
-      "year": "2020 — 2024",
-      "score": "CGPA: 9.46"
+      "degree": "B.Tech (CSE)",
+      "institution": "Narula Institute Of Technology",
+      "year": "2023 — 2027",
+      "score": "DGPA: 7.99/10.0"
     },
     {
       "degree": "Class 12",
-      "institution": "Sigma School, Porbandar",
-      "year": "2020",
-      "score": "83.69%"
+      "institution": "Indira Gandhi Memorial High School",
+      "year": "2023",
+      "score": "65.4%"
     },
     {
       "degree": "Class 10",
-      "institution": "Sigma School, Porbandar",
-      "year": "2018",
-      "score": "90.67%"
+      "institution": "Indira Gandhi Memorial Academy",
+      "year": "2021",
+      "score": "84.6%"
     }
   ],
   "certifications": [
     {
-      "name": "AWS Certified Cloud Practitioner",
-      "issuer": "Amazon Web Services",
-      "year": "2023",
+      "name": "Programming in Java",
+      "issuer": "NPTEL",
+      "year": "2025",
+      "url": "https://drive.google.com/file/d/1Lerk7Jr-FvCgA88TPoRZ23dMdkbJJgsz/view",
       "color": "#f59e0b"
     },
     {
-      "name": "Microsoft Azure Fundamentals",
-      "issuer": "Microsoft",
-      "year": "2023",
+      "name": "Cloud Computing",
+      "issuer": "NPTEL",
+      "year": "2025",
+      "url": "https://drive.google.com/file/d/14_eLBd3rpbYLDgcAzkZr2trSkLJ7jZIM/view",
       "color": "#3b82f6"
+    },
+    {
+      "name": "The Ultimate 70+ Hour Front-End Web Development Course",
+      "issuer": "Udemy",
+      "year": "2025",
+      "url": "https://www.udemy.com/certificate/UC-aac61d71-52f6-4f8c-bed6-0712b597c471/",
+      "color": "#10b981"
     }
   ],
   "achievements": [
     {
-      "title": "Led Tech Sessions",
-      "description": "Delivered engaging sessions for 60+ students on Open Source, Git-GitHub, and C++ STL"
+      "title": "India AI Impact Buildathon 2026 Finalist",
+      "description": "Recognized as a Top 2% National Finalist among 40,000+ competitors for developing innovative AI-driven solutions",
+      "url": "https://www.guvi.in/verify-certificate?id=9h185og71V77ORD144"
     },
     {
-      "title": "CodePie 3.0 Organizer",
-      "description": "Organized university-level coding competition with 550+ participants, supervised 30 core team members and 120 volunteers"
-    },
-    {
-      "title": "Instagram Creator",
-      "description": "Building a community of 10.8K+ followers on tech and AI content"
+      "title": "GeeksforGeeks",
+      "description": "Solved 50+ complex Data Structures and Algorithms (DSA) problems to strengthen core computational logic",
+      "url": "https://www.geeksforgeeks.org/profile/aadityagasbg?tab=activity"
     }
   ],
   "skills": {
-    "core": ["DBMS", "OOP", "Computer Networking", "OS", "DSA", "Machine Learning", "Deep Learning"],
+    "core": [
+      "DBMS",
+      "OOP",
+      "Computer Networking",
+      "OS",
+      "DSA",
+      "Machine Learning",
+      "Deep Learning"
+    ],
     "languages": ["C++", "Python", "JavaScript", "SQL"],
     "tools": ["Git", "Docker", "Linux", "VS Code", "Kubernetes", "Jenkins"],
-    "monitoring": ["Prometheus", "Grafana", "Azure Monitor", "Application Insights"],
+    "monitoring": [
+      "Prometheus",
+      "Grafana",
+      "Azure Monitor",
+      "Application Insights"
+    ],
     "web": ["HTML", "CSS", "JavaScript", "React.js", "Node.js", "Express.js"],
     "cloud": ["AWS", "Azure", "EKS", "Azure Key Vault"],
-    "ml": ["TensorFlow", "scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn", "NLP", "LLM"]
+    "ml": [
+      "TensorFlow",
+      "scikit-learn",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "NLP",
+      "LLM"
+    ]
   }
 }

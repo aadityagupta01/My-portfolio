@@ -15,12 +15,19 @@
 
 /* Subtle grid background (matching Hero/Education) */
 .contact::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      color-mix(in srgb, var(--border) 40%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--border) 40%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
@@ -56,7 +63,7 @@ html[data-theme="light"] .contact-glow {
 
 /* ── Heading ── */
 .contact-heading {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(2.4rem, 5vw, 3.6rem);
   font-weight: 700;
   color: var(--text-primary);
@@ -67,7 +74,7 @@ html[data-theme="light"] .contact-glow {
 }
 
 .contact-heading::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
@@ -101,10 +108,11 @@ html[data-theme="light"] .contact-glow {
   background: var(--bg-card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-              background 0.3s ease,
-              box-shadow 0.3s ease,
-              border-color 0.3s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   position: relative;
   cursor: pointer;
   width: 130px;
@@ -115,7 +123,7 @@ html[data-theme="light"] .contact-glow {
   transform: scale(1.06) translateY(-4px);
   background: var(--bg-card-hover);
   border-color: color-mix(in srgb, var(--brand-color) 40%, transparent);
-  box-shadow: 
+  box-shadow:
     0 12px 24px -10px color-mix(in srgb, var(--brand-color) 25%, transparent),
     0 0 0 1px color-mix(in srgb, var(--brand-color) 15%, transparent);
 }
@@ -136,7 +144,9 @@ html[data-theme="light"] .contact-glow {
 }
 
 .contact-social-card:hover .contact-social-icon {
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--brand-color) 40%, transparent));
+  filter: drop-shadow(
+    0 0 6px color-mix(in srgb, var(--brand-color) 40%, transparent)
+  );
 }
 
 /* Instagram specific follower badge */
@@ -144,9 +154,9 @@ html[data-theme="light"] .contact-glow {
   position: absolute;
   top: -8px;
   right: -8px;
-  background: linear-gradient(135deg, #E1306C, #833AB4);
+  background: linear-gradient(135deg, #e1306c, #833ab4);
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10px;
   font-weight: 700;
   padding: 3px 8px;
@@ -157,7 +167,7 @@ html[data-theme="light"] .contact-glow {
 }
 
 .contact-social-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
@@ -246,9 +256,10 @@ html[data-theme="light"] .contact-glow {
   cursor: pointer;
   flex-shrink: 0;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-              background-color 0.3s ease,
-              color 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .contact-composer-btn:hover {
@@ -286,7 +297,7 @@ html[data-theme="light"] .contact-glow {
   top: 100%;
   left: 0;
   margin-top: 10px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #ef4444; /* red */
@@ -334,7 +345,7 @@ html[data-theme="light"] .contact-glow {
 }
 
 .success-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -342,7 +353,7 @@ html[data-theme="light"] .contact-glow {
 }
 
 .success-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   color: var(--text-secondary);
   max-width: 440px;
@@ -356,7 +367,7 @@ html[data-theme="light"] .contact-glow {
   border: 1px solid var(--border);
   background: var(--bg-card);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
@@ -402,7 +413,7 @@ html[data-theme="light"] .contact-glow {
     width: 50px;
     height: 50px;
   }
-  
+
   .contact-composer-btn svg {
     width: 20px;
     height: 20px;

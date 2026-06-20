@@ -34,7 +34,7 @@
 }
 
 .whatido__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -71,7 +71,7 @@
 
 /* subtle gradient sheen on hover */
 .whatido__card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 12px;
@@ -112,7 +112,9 @@
     color-mix(in srgb, var(--card-accent) 6%, transparent)
   );
   border: 1px solid color-mix(in srgb, var(--card-accent) 20%, transparent);
-  transition: background 0.35s ease, border-color 0.35s ease;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .whatido__card:hover .whatido__card-icon {
@@ -136,7 +138,7 @@
 }
 
 .whatido__card-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
@@ -147,7 +149,7 @@
 }
 
 .whatido__card-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   color: var(--text-secondary);
   margin: 0;
@@ -201,4 +203,3 @@
     height: 22px;
   }
 }
-

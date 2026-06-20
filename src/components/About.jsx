@@ -1,23 +1,18 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import portfolioData from '../data/portfolio.json';
-import '../styles/About.css';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import portfolioData from "../data/portfolio.json";
+import "../styles/About.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 /* ── Two separate skill rows ── */
-const DEVOPS_FULLSTACK = [
-  'React', 'Node.js', 'Express.js', 'JavaScript', 'HTML/CSS',
-  'Docker', 'Kubernetes', 'AWS', 'Azure', 'Jenkins',
-  'Git', 'Prometheus', 'Grafana', 'Linux', 'MySQL',
-];
-
-const ML_DL = [
-  'Python', 'TensorFlow', 'PyTorch', 'Scikit-Learn', 'Pandas',
-  'NumPy', 'NLP', 'Deep Learning', 'Bayesian Networks', 'OpenCV',
-  'Keras', 'NLTK', 'Computer Vision', 'Reinforcement Learning',
-];
+const ABOUT_SKILLS = portfolioData.techStack;
+const DEVOPS_FULLSTACK = ABOUT_SKILLS.slice(
+  0,
+  Math.ceil(ABOUT_SKILLS.length / 2),
+);
+const ML_DL = ABOUT_SKILLS.slice(Math.ceil(ABOUT_SKILLS.length / 2));
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -32,34 +27,34 @@ const About = () => {
       // ── Divider line draws left → right ──
       gsap.fromTo(
         dividerRef.current,
-        { scaleX: 0, transformOrigin: 'left center' },
+        { scaleX: 0, transformOrigin: "left center" },
         {
           scaleX: 1,
           duration: 1.2,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            start: "top 85%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // ── Word-by-word tagline reveal ──
-      const words = taglineRef.current.querySelectorAll('.about-word');
-      gsap.set(words, { opacity: 0, y: 40, filter: 'blur(6px)' });
+      const words = taglineRef.current.querySelectorAll(".about-word");
+      gsap.set(words, { opacity: 0, y: 40, filter: "blur(6px)" });
 
       gsap.to(words, {
         opacity: 1,
         y: 0,
-        filter: 'blur(0px)',
+        filter: "blur(0px)",
         duration: 0.7,
-        ease: 'power3.out',
+        ease: "power3.out",
         stagger: 0.06,
         scrollTrigger: {
           trigger: taglineRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       });
 
@@ -71,13 +66,13 @@ const About = () => {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: descriptionRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            start: "top 85%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // ── Marquee Row 1: Left → Right (DevOps/Full-stack) ──
@@ -90,12 +85,12 @@ const About = () => {
           {
             x: 0,
             duration: 35,
-            ease: 'none',
+            ease: "none",
             repeat: -1,
             modifiers: {
               x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth1),
             },
-          }
+          },
         );
       }
 
@@ -106,7 +101,7 @@ const About = () => {
         gsap.to(track2, {
           x: -totalWidth2,
           duration: 30,
-          ease: 'none',
+          ease: "none",
           repeat: -1,
           modifiers: {
             x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth2),
@@ -119,7 +114,9 @@ const About = () => {
   }, []);
 
   // Split tagline into word spans
-  const taglineWords = portfolioData.personal.tagline.split(' ');
+  const taglineWords = portfolioData.personal.tagline.split(" ");
+  const aboutDescriptionSegments = portfolioData.personal
+    .aboutDescriptionSegments || [{ text: portfolioData.personal.description }];
 
   return (
     <section className="about" id="about" ref={sectionRef}>
@@ -127,6 +124,11 @@ const About = () => {
       <div className="about-divider" ref={dividerRef} />
 
       <div className="about-content">
+        <div className="about-header">
+          <span className="about-label">// About Me</span>
+          <div className="about-accent-line" />
+        </div>
+
         {/* Tagline */}
         <h2 className="about-tagline" ref={taglineRef}>
           {taglineWords.map((word, i) => (
@@ -138,7 +140,14 @@ const About = () => {
 
         {/* Description */}
         <p className="about-description" ref={descriptionRef}>
-          {portfolioData.personal.description}
+          {aboutDescriptionSegments.map((segment, i) => (
+            <span
+              className={segment.highlight ? "about-highlight" : undefined}
+              key={i}
+            >
+              {segment.text}
+            </span>
+          ))}
         </p>
       </div>
 
@@ -164,8 +173,13 @@ const About = () => {
         <div className="about-marquee about-marquee--row2">
           <div className="about-marquee-track" ref={marqueeTrack2Ref}>
             {[...ML_DL, ...ML_DL].map((name, i) => (
-              <div className="about-marquee-item about-marquee-item--ml" key={`ml-${i}`}>
-                <span className="about-marquee-icon about-marquee-icon--ml">🧠</span>
+              <div
+                className="about-marquee-item about-marquee-item--ml"
+                key={`ml-${i}`}
+              >
+                <span className="about-marquee-icon about-marquee-icon--ml">
+                  🧠
+                </span>
                 <span className="about-marquee-name">{name}</span>
               </div>
             ))}

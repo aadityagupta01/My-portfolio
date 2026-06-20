@@ -22,16 +22,27 @@
 
 /* Glassmorphism background layer (pseudo-element for perf) */
 .navbar::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: color-mix(in srgb, var(--bg-primary) calc(var(--nav-bg-opacity) * 100%), transparent);
+  background: color-mix(
+    in srgb,
+    var(--bg-primary) calc(var(--nav-bg-opacity) * 100%),
+    transparent
+  );
   backdrop-filter: blur(var(--nav-blur));
   -webkit-backdrop-filter: blur(var(--nav-blur));
-  border-bottom: 1px solid color-mix(in srgb, var(--text-primary) calc(var(--nav-border-opacity) * 100%), transparent);
+  border-bottom: 1px solid
+    color-mix(
+      in srgb,
+      var(--text-primary) calc(var(--nav-border-opacity) * 100%),
+      transparent
+    );
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-  transition: background 0.35s ease, backdrop-filter 0.35s ease;
+  transition:
+    background 0.35s ease,
+    backdrop-filter 0.35s ease;
   z-index: -1;
 }
 
@@ -62,7 +73,7 @@
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--text-primary) 4%, transparent);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -81,7 +92,7 @@
 
 /* Subtle inner glow */
 .navbar__pill::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -130,12 +141,16 @@
 }
 
 .nav-icon--circle svg {
-  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--accent) 50%, transparent));
+  filter: drop-shadow(
+    0 0 4px color-mix(in srgb, var(--accent) 50%, transparent)
+  );
   transition: filter 0.3s ease;
 }
 
 .navbar__pill:hover .nav-icon--circle svg {
-  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 75%, transparent));
+  filter: drop-shadow(
+    0 0 8px color-mix(in srgb, var(--accent) 75%, transparent)
+  );
 }
 
 .nav-icon--briefcase {

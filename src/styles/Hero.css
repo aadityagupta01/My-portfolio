@@ -27,7 +27,11 @@
 .hero-bg-orb--1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.12) 0%,
+    transparent 70%
+  );
   top: -10%;
   left: -5%;
 }
@@ -35,7 +39,11 @@
 .hero-bg-orb--2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.08) 0%,
+    transparent 70%
+  );
   bottom: -15%;
   right: -5%;
 }
@@ -44,8 +52,15 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--border) 40%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      color-mix(in srgb, var(--border) 40%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--border) 40%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 60px 60px;
   pointer-events: none;
   z-index: 0;
@@ -85,7 +100,7 @@
 }
 
 .hero-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 3px;
@@ -96,7 +111,7 @@
 }
 
 .hero-title-line {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
@@ -151,10 +166,10 @@
 }
 
 .hero-circular-text text {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 20px;
   font-weight: 900;
-  text-transform: uppercase;
+  text-transform: none;
   fill: var(--accent);
   opacity: 0.85;
   text-shadow: 0 0 8px var(--accent-glow);
@@ -174,7 +189,12 @@
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-glow-strong) 0%, var(--accent-glow) 50%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    var(--accent-glow-strong) 0%,
+    var(--accent-glow) 50%,
+    transparent 70%
+  );
   z-index: 0;
   will-change: transform, opacity;
 }
@@ -233,7 +253,7 @@
 }
 
 .hero-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: var(--text-secondary);
@@ -252,12 +272,39 @@
 }
 
 .hero-bio {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 15px;
   font-weight: 300;
   color: var(--text-secondary);
   line-height: 1.8;
   margin: 0;
+}
+
+/* ── Right-column slogan (Think / Code / Deploy) ── */
+.hero-slogan {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  margin: 6px 0 12px;
+}
+
+.hero-slogan-line {
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+  font-size: clamp(22px, 3.8vw, 48px);
+  line-height: 0.95;
+  letter-spacing: -1px;
+  background: linear-gradient(
+    180deg,
+    var(--text-primary) 0%,
+    color-mix(in srgb, var(--text-primary) 70%, var(--accent)) 60%,
+    var(--accent) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.03);
 }
 
 .hero-bio-stats {
@@ -272,7 +319,7 @@
 }
 
 .hero-stat-number {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 28px;
   font-weight: 700;
   color: var(--accent);
@@ -280,7 +327,7 @@
 }
 
 .hero-stat-label {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 400;
   color: var(--text-muted);
@@ -310,7 +357,7 @@
 
 .hero-lastname {
   display: block;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 20px;
@@ -320,7 +367,7 @@
 }
 
 .hero-firstname {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(70px, 10vw, 140px);
   font-weight: 900;
   color: var(--text-primary);
@@ -353,7 +400,7 @@
 }
 
 .hero-tech-pill {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 500;
   color: var(--text-secondary);
@@ -387,7 +434,7 @@
 }
 
 .hero-scroll-indicator span {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10px;
   font-weight: 400;
   letter-spacing: 3px;
@@ -403,7 +450,8 @@
 }
 
 @keyframes hero-scroll-pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.3;
     transform: scaleY(0.6);
     transform-origin: top;

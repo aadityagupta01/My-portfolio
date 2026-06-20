@@ -11,14 +11,18 @@
 
 /* Subtle background grain/glow */
 .experience::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.04) 0%,
+    transparent 70%
+  );
   pointer-events: none;
   z-index: 0;
 }
@@ -33,7 +37,7 @@
 }
 
 .exp-label {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 800;
   color: var(--text-primary);
@@ -45,14 +49,18 @@
 .exp-accent-line {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 35%, transparent));
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 35%, transparent)
+  );
   margin: 0 auto 20px;
   border-radius: 2px;
   will-change: transform;
 }
 
 .exp-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(14px, 1.4vw, 17px);
   color: #71717a;
   font-weight: 400;
@@ -143,7 +151,9 @@
   inset: 4px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 12px var(--accent-glow-strong), 0 0 30px var(--accent-glow);
+  box-shadow:
+    0 0 12px var(--accent-glow-strong),
+    0 0 30px var(--accent-glow);
 }
 
 .exp-dot-ring {
@@ -165,12 +175,22 @@
   position: relative;
   border-radius: 16px;
   padding: 2px; /* space for the gradient border */
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 15%, transparent) 0%, var(--border) 50%, color-mix(in srgb, var(--accent) 10%, transparent) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 15%, transparent) 0%,
+    var(--border) 50%,
+    color-mix(in srgb, var(--accent) 10%, transparent) 100%
+  );
   transition: background 0.4s ease;
 }
 
 .exp-card:hover .exp-card-inner {
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 35%, transparent) 0%, var(--accent-light) 50%, color-mix(in srgb, var(--accent) 30%, transparent) 100%);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 35%, transparent) 0%,
+    var(--accent-light) 50%,
+    color-mix(in srgb, var(--accent) 30%, transparent) 100%
+  );
 }
 
 .exp-card-content {
@@ -183,13 +203,18 @@
 
 /* Subtle inner glow on hover */
 .exp-card-content::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 30%, transparent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 30%, transparent),
+    transparent
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -200,13 +225,17 @@
 
 /* Corner accent glow */
 .exp-card-content::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -40px;
   right: -40px;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 6%, transparent) 0%,
+    transparent 70%
+  );
   pointer-events: none;
   transition: opacity 0.4s ease;
   opacity: 0;
@@ -225,7 +254,7 @@
 }
 
 .exp-period {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
@@ -234,7 +263,7 @@
 }
 
 .exp-card-badge {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 11px;
   font-weight: 600;
   color: var(--accent);
@@ -247,7 +276,7 @@
 
 /* ── Role & Company ───────────────────────────────────────── */
 .exp-role {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 700;
   color: var(--text-primary);
@@ -257,7 +286,7 @@
 }
 
 .exp-company {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(16px, 1.6vw, 20px);
   font-weight: 600;
   color: var(--accent);
@@ -288,7 +317,7 @@
 }
 
 .exp-bullet-text {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: var(--text-secondary);
@@ -297,23 +326,31 @@
 
 /* ── Connector lines from dot to card ─────────────────────── */
 .exp-entry--left .exp-card::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 30px;
   right: -40px;
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--accent) 30%, transparent));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 10%, transparent),
+    color-mix(in srgb, var(--accent) 30%, transparent)
+  );
 }
 
 .exp-entry--right .exp-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 30px;
   left: -40px;
   width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 30%, transparent), color-mix(in srgb, var(--accent) 10%, transparent));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 30%, transparent),
+    color-mix(in srgb, var(--accent) 10%, transparent)
+  );
 }
 
 /* ============================================================

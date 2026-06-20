@@ -1,27 +1,27 @@
-import { useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Navbar from './components/Navbar'
-import MouseFollower from './components/MouseFollower'
-import ThemeToggle from './components/ThemeToggle'
-import Hero from './components/Hero'
-import About from './components/About'
-import WhatIDo from './components/WhatIDo'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Education from './components/Education'
-import Certifications from './components/Certifications'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import './App.css'
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navbar from "./components/Navbar";
+import MouseFollower from "./components/MouseFollower";
+import ThemeToggle from "./components/ThemeToggle";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import WhatIDo from "./components/WhatIDo";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Certifications from "./components/Certifications";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import "./App.css";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
     // Disable browser scroll restoration behavior
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
     }
 
     // Scroll to the very top on load/refresh
@@ -29,13 +29,13 @@ function App() {
 
     // Refresh ScrollTrigger after all content loads
     const timer = setTimeout(() => {
-      ScrollTrigger.refresh()
-    }, 500)
+      ScrollTrigger.refresh();
+    }, 500);
 
     return () => {
-      clearTimeout(timer)
-    }
-  }, [])
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
     <div className="app">
@@ -49,7 +49,7 @@ function App() {
       </div>
 
       <Navbar />
-      
+
       <main>
         <section id="hero">
           <Hero />
@@ -86,7 +86,7 @@ function App() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

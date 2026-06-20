@@ -1,16 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
-import gsap from 'gsap';
-import '../styles/MouseFollower.css';
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import "../styles/MouseFollower.css";
 
 const MouseFollower = () => {
   const cursorRef = useRef(null);
   const pointerRef = useRef(null);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isRightArrow, setIsRightArrow] = useState(false);
 
   useEffect(() => {
     // Only enable on devices that support hover (desktops/laptops)
-    const hasHover = window.matchMedia('(hover: hover)').matches;
+    const hasHover = window.matchMedia("(hover: hover)").matches;
     if (!hasHover) return;
 
     const cursor = cursorRef.current;
@@ -22,8 +22,14 @@ const MouseFollower = () => {
     gsap.set(pointer, { x: -100, y: -100, opacity: 0 });
 
     // GSAP quickTo for ultra-smooth 60fps tracking on the follower
-    const xTo = gsap.quickTo(cursor, 'x', { duration: 0.35, ease: 'power3.out' });
-    const yTo = gsap.quickTo(cursor, 'y', { duration: 0.35, ease: 'power3.out' });
+    const xTo = gsap.quickTo(cursor, "x", {
+      duration: 0.35,
+      ease: "power3.out",
+    });
+    const yTo = gsap.quickTo(cursor, "y", {
+      duration: 0.35,
+      ease: "power3.out",
+    });
 
     let hasMoved = false;
 
@@ -36,18 +42,18 @@ const MouseFollower = () => {
       }
       xTo(e.clientX);
       yTo(e.clientY);
-      
+
       // Update pointer position instantly (zero lag) for maximum responsiveness
       gsap.set(pointer, { x: e.clientX, y: e.clientY });
     };
 
     // active class (mousedown/mouseup)
     const handleMouseDown = () => {
-      cursor.classList.add('-active');
+      cursor.classList.add("-active");
     };
 
     const handleMouseUp = () => {
-      cursor.classList.remove('-active');
+      cursor.classList.remove("-active");
     };
 
     // hide/show on window boundary cross
@@ -65,53 +71,57 @@ const MouseFollower = () => {
     const handleMouseOver = (e) => {
       // First, check for interactive elements/cards
       const interactiveTarget = e.target.closest(
-        '[data-cursor], a, button, .navbar__pill, .projects__card, .whatido__card, .contact-social-card'
+        "[data-cursor], a, button, .navbar__pill, .projects__card, .whatido__card, .contact-social-card",
       );
 
       // Second, check for plain text elements
-      const textTarget = e.target.closest('h1, h2, h3, h4, h5, h6, p, li, span, code');
+      const textTarget = e.target.closest(
+        "h1, h2, h3, h4, h5, h6, p, li, span, code",
+      );
 
       // Decide target priority (interactive parents override normal text)
       const target = interactiveTarget || textTarget;
       if (!target) return;
 
-      let cursorClass = '';
-      let cursorText = '';
-      let cursorColor = '';
+      let cursorClass = "";
+      let cursorText = "";
+      let cursorColor = "";
       let useRightArrow = false;
 
       if (interactiveTarget) {
         // Extract interactive details
-        const dataCursor = target.getAttribute('data-cursor');
-        const dataText = target.getAttribute('data-cursor-text');
-        const dataColor = target.getAttribute('data-cursor-color');
+        const dataCursor = target.getAttribute("data-cursor");
+        const dataText = target.getAttribute("data-cursor-text");
+        const dataColor = target.getAttribute("data-cursor-color");
 
         // Determine state class
         if (dataCursor) {
           cursorClass = dataCursor;
         } else if (
-          target.tagName === 'A' ||
-          target.tagName === 'BUTTON' ||
-          target.classList.contains('navbar__pill')
+          target.tagName === "A" ||
+          target.tagName === "BUTTON" ||
+          target.classList.contains("navbar__pill")
         ) {
-          cursorClass = '-pointer';
+          cursorClass = "-pointer";
         }
 
         if (dataText) {
-          cursorClass = '-text';
+          cursorClass = "-text";
           cursorText = dataText;
         }
 
         // Check specific components
-        if (target.classList.contains('projects__card')) {
-          cursorClass = '-arrow';
-          cursorColor = target.style.getPropertyValue('--project-accent') || '#10b981';
-        } else if (target.classList.contains('whatido__card')) {
-          cursorClass = '-arrow';
+        if (target.classList.contains("projects__card")) {
+          cursorClass = "-arrow";
+          cursorColor =
+            target.style.getPropertyValue("--project-accent") || "#10b981";
+        } else if (target.classList.contains("whatido__card")) {
+          cursorClass = "-arrow";
           useRightArrow = true;
-          cursorColor = target.style.getPropertyValue('--card-accent') || '#10b981';
-        } else if (target.classList.contains('contact-social-card')) {
-          cursorClass = '-exclusion';
+          cursorColor =
+            target.style.getPropertyValue("--card-accent") || "#10b981";
+        } else if (target.classList.contains("contact-social-card")) {
+          cursorClass = "-exclusion";
         }
 
         // Override with custom data attribute color if defined
@@ -120,7 +130,7 @@ const MouseFollower = () => {
         }
       } else if (textTarget) {
         // Normal body text hover: expand dot into translucent ring to reveal text underneath
-        cursorClass = '-pointer';
+        cursorClass = "-pointer";
       }
 
       // Set class state
@@ -129,7 +139,7 @@ const MouseFollower = () => {
       }
 
       // Hide pointer arrow in -arrow or -text states to keep the look clean
-      if (cursorClass === '-arrow' || cursorClass === '-text') {
+      if (cursorClass === "-arrow" || cursorClass === "-text") {
         gsap.to(pointer, { opacity: 0, duration: 0.15 });
       } else {
         gsap.to(pointer, { opacity: 1, duration: 0.15 });
@@ -145,46 +155,46 @@ const MouseFollower = () => {
 
       // Set brand color highlights
       if (cursorColor) {
-        cursor.style.setProperty('--cursor-accent', cursorColor);
-        cursor.style.setProperty('--cursor-accent-glow', `${cursorColor}4d`); // 30% opacity
+        cursor.style.setProperty("--cursor-accent", cursorColor);
+        cursor.style.setProperty("--cursor-accent-glow", `${cursorColor}4d`); // 30% opacity
       }
     };
 
     const handleMouseOut = (e) => {
       const target = e.target.closest(
-        '[data-cursor], a, button, .navbar__pill, .projects__card, .whatido__card, .contact-social-card, h1, h2, h3, h4, h5, h6, p, li, span, code'
+        "[data-cursor], a, button, .navbar__pill, .projects__card, .whatido__card, .contact-social-card, h1, h2, h3, h4, h5, h6, p, li, span, code",
       );
       if (!target) return;
 
       // Revert to normal
-      cursor.className = 'mf-cursor';
-      setText('');
+      cursor.className = "mf-cursor";
+      setText("");
       setIsRightArrow(false);
-      cursor.style.removeProperty('--cursor-accent');
-      cursor.style.removeProperty('--cursor-accent-glow');
-      
+      cursor.style.removeProperty("--cursor-accent");
+      cursor.style.removeProperty("--cursor-accent-glow");
+
       // Re-show pointer arrow
       gsap.to(pointer, { opacity: 1, duration: 0.15 });
     };
 
     // Bind event listeners
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    window.addEventListener('mousedown', handleMouseDown, { passive: true });
-    window.addEventListener('mouseup', handleMouseUp, { passive: true });
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
-    document.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseout', handleMouseOut);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("mousedown", handleMouseDown, { passive: true });
+    window.addEventListener("mouseup", handleMouseUp, { passive: true });
+    document.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("mouseenter", handleMouseEnter);
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       // Clean up
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('mousedown', handleMouseDown);
-      window.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('mouseenter', handleMouseEnter);
-      document.removeEventListener('mouseover', handleMouseOver);
-      document.removeEventListener('mouseout', handleMouseOut);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("mouseenter", handleMouseEnter);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
 

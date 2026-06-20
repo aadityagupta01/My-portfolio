@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
 
 /* ========================================
    DESIGN TOKENS
@@ -23,8 +23,8 @@
   --brand-github: #ffffff;
 
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
 
   /* Spacing */
   --section-padding: 100px 0;
@@ -66,7 +66,8 @@ html[data-theme="light"] {
   --border-light: #ece7e0; /* Warm light-grey border */
   --ambient-opacity: 0.04;
   --brand-github: #2d2621; /* Soft espresso/charcoal */
-  --shadow-card: 0 10px 30px rgba(45, 38, 33, 0.05), 0 1px 3px rgba(45, 38, 33, 0.03);
+  --shadow-card:
+    0 10px 30px rgba(45, 38, 33, 0.05), 0 1px 3px rgba(45, 38, 33, 0.03);
   --shadow-glow: 0 0 25px rgba(5, 150, 105, 0.12);
 }
 
@@ -87,12 +88,21 @@ body,
 .contact-input,
 .contact-submit,
 .footer,
-h1, h2, h3, h4, h5, h6,
-p, span, a, input, textarea {
-  transition: 
-    background-color 0.3s ease, 
-    border-color 0.3s ease, 
-    color 0.3s ease, 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+input,
+textarea {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
@@ -144,16 +154,29 @@ body {
 /* ========================================
    TYPOGRAPHY
    ======================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
 
 p {
   font-family: var(--font-body);
@@ -193,7 +216,7 @@ a:hover {
 }
 
 .section-heading::before {
-  content: '';
+  content: "";
   width: 4px;
   height: 30px;
   background: var(--accent);
@@ -265,7 +288,8 @@ a:hover {
    ANIMATIONS BASE
    ======================================== */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px var(--accent-glow);
   }
   50% {
@@ -274,7 +298,8 @@ a:hover {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -344,4 +369,3 @@ a:hover {
     cursor: none !important;
   }
 }
-

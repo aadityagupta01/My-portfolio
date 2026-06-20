@@ -11,24 +11,32 @@
 
 /* Ambient glow */
 .certach::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 20%;
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.04) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
 .certach::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 10%;
   right: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.03) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.03) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -42,7 +50,7 @@
 
 .certach-label {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -56,7 +64,7 @@
 }
 
 .certach-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: clamp(32px, 4.5vw, 52px);
   font-weight: 700;
   color: var(--text-primary);
@@ -66,14 +74,18 @@
 }
 
 .certach-accent {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-light) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .certach-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(15px, 1.4vw, 18px);
   color: var(--text-secondary);
   line-height: 1.6;
@@ -91,7 +103,7 @@
 }
 
 .certach-section-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 20px;
   font-weight: 600;
   color: var(--text-primary);
@@ -135,7 +147,10 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
   will-change: transform, opacity;
 }
 
@@ -197,7 +212,7 @@
 }
 
 .certach-cert-name {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 17px;
   font-weight: 600;
   color: var(--text-primary);
@@ -206,7 +221,7 @@
 }
 
 .certach-cert-issuer {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: var(--text-secondary);
@@ -216,7 +231,7 @@
 /* Year pill */
 .certach-cert-year {
   flex-shrink: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 600;
   padding: 4px 14px;
@@ -243,7 +258,10 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   text-align: center;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
   will-change: transform, opacity, filter;
 }
 
@@ -277,7 +295,7 @@
 /* Highlight number */
 .certach-ach-highlight {
   display: block;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 28px;
   font-weight: 700;
   background: linear-gradient(135deg, var(--accent), var(--accent-light));
@@ -290,7 +308,7 @@
 
 /* Title */
 .certach-ach-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 17px;
   font-weight: 600;
   color: var(--text-primary);
@@ -299,7 +317,7 @@
 
 /* Description */
 .certach-ach-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: var(--text-secondary);

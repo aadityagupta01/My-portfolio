@@ -11,14 +11,18 @@
 
 /* subtle ambient glow behind the section */
 .projects::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.045) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.045) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -47,7 +51,7 @@
 }
 
 .projects__title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 2.6rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -73,9 +77,10 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.4s ease;
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.4s ease;
   will-change: transform;
 }
 
@@ -110,7 +115,9 @@
   border-radius: 50%;
   background: radial-gradient(circle, var(--project-accent), transparent 70%);
   opacity: 0.08;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   pointer-events: none;
 }
 
@@ -125,7 +132,7 @@
   z-index: 1;
   display: inline-block;
   padding: 5px 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -143,7 +150,7 @@
 }
 
 .projects__card-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -153,7 +160,7 @@
 }
 
 .projects__card-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.88rem;
   color: var(--text-secondary);
   line-height: 1.65;
@@ -171,14 +178,17 @@
   display: inline-flex;
   align-items: center;
   padding: 5px 13px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.73rem;
   font-weight: 500;
   color: var(--text-secondary);
   background: var(--bg-primary);
   border: 1px solid color-mix(in srgb, var(--project-accent) 20%, transparent);
   border-radius: 20px;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
   white-space: nowrap;
 }
 
@@ -199,7 +209,7 @@
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--project-accent);
@@ -207,7 +217,10 @@
   border: 1px solid color-mix(in srgb, var(--project-accent) 20%, transparent);
   border-radius: 10px;
   text-decoration: none;
-  transition: background 0.3s ease, border-color 0.3s ease, gap 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    gap 0.3s ease;
   cursor: pointer;
 }
 

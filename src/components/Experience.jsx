@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import portfolioData from '../data/portfolio.json';
-import '../styles/Experience.css';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import portfolioData from "../data/portfolio.json";
+import "../styles/Experience.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,46 +25,46 @@ const Experience = () => {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
+            start: "top 80%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // ── Accent line draws left → right ──
       gsap.fromTo(
         accentLineRef.current,
-        { scaleX: 0, transformOrigin: 'left center' },
+        { scaleX: 0, transformOrigin: "left center" },
         {
           scaleX: 1,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
+            start: "top 80%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // ── Vertical timeline line draws top → bottom with scrub ──
       if (timelineLineRef.current) {
         gsap.fromTo(
           timelineLineRef.current,
-          { scaleY: 0, transformOrigin: 'top center' },
+          { scaleY: 0, transformOrigin: "top center" },
           {
             scaleY: 1,
-            ease: 'none',
+            ease: "none",
             scrollTrigger: {
               trigger: timelineLineRef.current,
-              start: 'top 75%',
-              end: 'bottom 50%',
+              start: "top 75%",
+              end: "bottom 50%",
               scrub: 1,
             },
-          }
+          },
         );
       }
 
@@ -85,13 +85,13 @@ const Experience = () => {
             x: 0,
             rotateY: 0,
             duration: 1,
-            ease: 'power3.out',
+            ease: "power3.out",
             scrollTrigger: {
               trigger: card,
-              start: 'top 82%',
-              toggleActions: 'play none none none',
+              start: "top 82%",
+              toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
 
@@ -106,27 +106,27 @@ const Experience = () => {
             scale: 1,
             opacity: 1,
             duration: 0.6,
-            ease: 'back.out(2)',
+            ease: "back.out(2)",
             scrollTrigger: {
               trigger: dot,
-              start: 'top 82%',
-              toggleActions: 'play none none none',
+              start: "top 82%",
+              toggleActions: "play none none none",
             },
-          }
+          },
         );
 
         // Continuous pulse after appearing
-        gsap.to(dot.querySelector('.exp-dot-ring'), {
+        gsap.to(dot.querySelector(".exp-dot-ring"), {
           scale: 1.8,
           opacity: 0,
           duration: 1.5,
-          ease: 'power1.out',
+          ease: "power1.out",
           repeat: -1,
           delay: 0.6,
           scrollTrigger: {
             trigger: dot,
-            start: 'top 82%',
-            toggleActions: 'play pause resume pause',
+            start: "top 82%",
+            toggleActions: "play pause resume pause",
           },
         });
       });
@@ -134,24 +134,24 @@ const Experience = () => {
       // ── Staggered fade-in of bullet points ──
       bulletGroupsRef.current.forEach((group) => {
         if (!group) return;
-        const bullets = group.querySelectorAll('.exp-bullet');
+        const bullets = group.querySelectorAll(".exp-bullet");
 
         gsap.fromTo(
           bullets,
-          { opacity: 0, x: -30, filter: 'blur(4px)' },
+          { opacity: 0, x: -30, filter: "blur(4px)" },
           {
             opacity: 1,
             x: 0,
-            filter: 'blur(0px)',
+            filter: "blur(0px)",
             duration: 0.5,
-            ease: 'power2.out',
+            ease: "power2.out",
             stagger: 0.12,
             scrollTrigger: {
               trigger: group,
-              start: 'top 85%',
-              toggleActions: 'play none none none',
+              start: "top 85%",
+              toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
     }, sectionRef);
@@ -167,7 +167,9 @@ const Experience = () => {
       <div className="exp-header" ref={headingRef}>
         <span className="exp-label">Experience</span>
         <div className="exp-accent-line" ref={accentLineRef} />
-        <p className="exp-subtitle">Where I've contributed and grown as an engineer</p>
+        <p className="exp-subtitle">
+          Where I've contributed and grown as an engineer
+        </p>
       </div>
 
       {/* ── Timeline ── */}
@@ -179,7 +181,7 @@ const Experience = () => {
 
         {experience.map((exp, index) => (
           <div
-            className={`exp-entry ${index % 2 === 0 ? 'exp-entry--left' : 'exp-entry--right'}`}
+            className={`exp-entry ${index % 2 === 0 ? "exp-entry--left" : "exp-entry--right"}`}
             key={index}
           >
             {/* Timeline dot */}
@@ -206,7 +208,7 @@ const Experience = () => {
                   <div className="exp-card-top">
                     <span className="exp-period">{exp.period}</span>
                     <div className="exp-card-badge">
-                      {index === 0 ? '● Recent' : '● Past'}
+                      {index === 0 ? "● Recent" : "● Past"}
                     </div>
                   </div>
 

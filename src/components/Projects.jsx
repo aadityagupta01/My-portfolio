@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import portfolioData from '../data/portfolio.json';
-import '../styles/Projects.css';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import portfolioData from "../data/portfolio.json";
+import "../styles/Projects.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,11 +19,11 @@ const Projects = () => {
         x: -80,
         opacity: 0,
         duration: 0.8,
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       });
 
@@ -34,28 +34,28 @@ const Projects = () => {
         gsap.fromTo(
           card,
           {
-            clipPath: 'inset(100% 0% 0% 0%)',
+            clipPath: "inset(100% 0% 0% 0%)",
             opacity: 0,
           },
           {
-            clipPath: 'inset(0% 0% 0% 0%)',
+            clipPath: "inset(0% 0% 0% 0%)",
             opacity: 1,
             duration: 0.9,
             delay: i * 0.15,
-            ease: 'power4.out',
+            ease: "power4.out",
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 70%',
-              toggleActions: 'play none none none',
+              start: "top 70%",
+              toggleActions: "play none none none",
             },
-          }
+          },
         );
       });
 
       /* ---- tech pills: stagger in after cards ---- */
       pillsRef.current.forEach((group, i) => {
         if (!group) return;
-        const pills = group.querySelectorAll('.projects__pill');
+        const pills = group.querySelectorAll(".projects__pill");
         if (!pills.length) return;
 
         gsap.from(pills, {
@@ -64,12 +64,12 @@ const Projects = () => {
           scale: 0.85,
           duration: 0.45,
           stagger: 0.06,
-          ease: 'back.out(1.7)',
+          ease: "back.out(1.7)",
           delay: 0.35 + i * 0.15,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
-            toggleActions: 'play none none none',
+            start: "top 70%",
+            toggleActions: "play none none none",
           },
         });
       });
@@ -96,7 +96,7 @@ const Projects = () => {
               className="projects__card"
               key={idx}
               ref={(el) => (cardsRef.current[idx] = el)}
-              style={{ '--project-accent': project.color }}
+              style={{ "--project-accent": project.color }}
             >
               {/* gradient header strip */}
               <div className="projects__card-header">
